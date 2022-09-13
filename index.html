@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html연습04 - 미디어 관련</title>
+  </head>
+  <body>
+    이미지 5개 이상 - jpg, png, gif, webp, svg
+    <!-- div.wrap>ul>li*5>img -->
+    <div class="wrap">
+      <ul>
+        <li>
+          <img
+            src="images/testimege01.jpg"
+            alt="java VS java"
+            title="java VS java"
+          />
+        </li>
+        <li><img src="images/testimege02.jpg " alt="Java" title="Java" /></li>
+        <li>
+          <img
+            src="images/testimege03.jpg"
+            alt="programming"
+            title="programming"
+          />
+        </li>
+        <li>
+          <img
+            src="images/testimege05.jpg"
+            alt="programming1"
+            title="programming"
+          />
+        </li>
+        <li>
+          <img
+            src="images/testimege06.jpg"
+            alt="programming"
+            title="programming"
+          />
+        </li>
+      </ul>
+    </div>
+
+    동영상 3개 이상 - mp4, webm, ogv
+    <!-- 
+        auto play : 창이 생성됐을때 자동으로 실행  
+        muted : 음소거 / 오토플레이가 되려면 음소거 필수 
+        loop : 반복재생
+        -->
+    <div>
+      <ul>
+        <li>
+          <video
+            src="video/Dua Lipa - Don't Start Now.mp4"
+            controls
+            autoplay
+            muted
+            loop
+          ></video>
+          <h3>video 요소의 태그 속성</h3>
+          <p>src : 해당 비디오 파일의 경로(위치와 파일명)</p>
+          <p>poster : 대기화면(섬네일) 이미지의 파일 경로</p>
+          <p>controls : 비디오 재생 제어 패널 표시</p>
+          <p>autoplay : 자동재생</p>
+          <p>muted : 무음처리(자동 재생시 반드시 필요함</p>
+          <p>loop : 반복 재생</p>
+          <p>width : 폭 : height : 높이</p>
+        </li>
+        <li>
+          <video width="800" height="600" controls loop>
+            <source src="video/Dua Lipa - Levitating.mp4" type="video/mp4" />
+            <source src="video/Dua Lipa - Levitating.webm" type="video/webm" />
+            <source src="video/Dua Lipa - Levitating.ovg" type="video/ogg" />
+            <div class="comment">
+              <h3>브라우저 마다 재생가능한 파일</h3>
+              <p>
+                mp4, webm, ogv 파일이 브라우저 마다 각기 다르게 재생 기능 재공
+              </p>
+            </div>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Internet Explorer</td>
+                  <td>yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Chrome</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>Firefox</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>Safari</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Opera</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                </tr>
+              </tbody>
+            </table>
+          </video>
+          <div class="comment"></div>
+        </li>
+        <li>
+          <video src=""></video>
+        </li>
+      </ul>
+    </div>
+    사운드 3개 이상 - mp3, ogg, wav
+  </body>
+</html>
