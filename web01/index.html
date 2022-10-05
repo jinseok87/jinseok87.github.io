@@ -32,24 +32,23 @@
       /* header.css */
       .hd {
         width: 100%;
-        position: fixed;
+        height: 145px;
+        position: absolute;
         top: 0;
         left: 0;
         z-index: 999;
         background-color: transparent;
-        height: 145px;
-      }
-      .hd:hover {
-        background-color: #fff;
       }
       .hd_wrap {
         width: 1200px;
         margin: 0 auto;
-        /* background-color: blue; */
+      }
+      .hd:hover {
+        background-color: #fff;
       }
       .logo {
         display: block;
-        /* width: 0px; */
+        width: 55px;
         height: auto;
         margin-top: 20px;
         margin-bottom: 20px;
@@ -59,17 +58,18 @@
       .logo img {
         display: block;
         width: 100%;
+        height: auto;
         /* background-color: blue; */
       }
       .tnb {
         float: right;
-        font-size: 15px;
         color: rgb(37, 26, 26);
         margin-top: 10px;
         padding: 10px;
       }
       .tnb a {
         color: rgb(238, 179, 62);
+        font-size: 14px;
       }
       .tnb a:hover {
         font-weight: 700;
@@ -77,6 +77,7 @@
       }
       .gnb {
         clear: both;
+        width: 100%;
       }
       /* clear-fix 처리 */
       .gnb:after {
@@ -87,24 +88,16 @@
       .gnb li {
         float: left;
       }
+      .gnb > ul :after {
+        content: "";
+        display: block;
+        clear: both;
+      }
       .gnb > ul > li {
         float: left;
         width: 20%;
-        text-align: center;
         line-height: 40px;
         position: relative;
-      }
-
-      .gnb li .sub {
-        display: none;
-        width: 100%;
-        height: auto;
-        position: absolute;
-        top: 40px;
-      }
-      .gnb li .sub li a {
-        display: block;
-        height: 30px;
       }
 
       /* 메인메뉴 */
@@ -114,20 +107,95 @@
         line-height: 18px;
         color: rgb(238, 179, 62);
         font-size: 22px;
+        text-align: center;
       }
       .gnb li:hover .dp1 {
         color: rgb(148, 26, 26);
       }
+      /* 서브메뉴------------ */
+      .gnb .sub {
+        /* display: none; */
+        width: 100px;
+        height: auto;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        z-index: 90;
+        height: 145;
+      }
+      .gnb li .sub li a {
+        background-color: #fff;
+        color: rgb(238, 179, 62);
+        font-size: 20px;
+        display: block;
+        text-indent: 2em;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: center;
+        height: 30px;
+      }
+      .gnb:hover li .sub {
+        clear: both;
+        height: 30px;
+        line-height: 30px;
+        display: block;
+      }
+      .gnb li .sub {
+        display: none;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 40px;
+      }
 
+      .content {
+        clear: both;
+        width: 100%;
+      }
       .vs {
         clear: both;
         width: 100%;
-        height: auto;
+        height: 100vh;
+        overflow: hidden;
       }
       .vdo {
         display: block;
         width: 100%;
         height: auto;
+      }
+      .page {
+        clear: both;
+        width: 100%;
+      }
+      .page_wrap {
+        width: 1200px;
+        margin: 0 auto;
+      }
+      /* #page1,
+      #page3 {
+        background-color: #ececec;
+      } */
+      .page_tit {
+        text-align: center;
+        font-size: 32px;
+        padding-top: 1.2em;
+        padding-bottom: 0.8em;
+      }
+      .lst {
+        clear: both;
+        width: 1200px;
+      }
+      .lst:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .lst li.left {
+        float: left;
+      }
+      .lst li.right {
+        float: right;
       }
     </style>
   </head>
