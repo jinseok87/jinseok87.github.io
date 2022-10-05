@@ -78,28 +78,56 @@
       .gnb {
         clear: both;
       }
+      /* clear-fix 처리 */
+      .gnb:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
       .gnb li {
         float: left;
+      }
+      .gnb > ul > li {
+        float: left;
+        width: 20%;
+        text-align: center;
+        line-height: 40px;
+        position: relative;
       }
 
       .gnb li .sub {
         display: none;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 40px;
+      }
+      .gnb li .sub li a {
+        display: block;
+        height: 30px;
       }
 
-      .gnb > ul > li {
-        width: 20%;
-        text-align: center;
-      }
       /* 메인메뉴 */
       .gnb li .dp1 {
         display: block;
         height: 40px;
-        line-height: 20px;
+        line-height: 18px;
         color: rgb(238, 179, 62);
+        font-size: 22px;
       }
-
       .gnb li:hover .dp1 {
         color: rgb(148, 26, 26);
+      }
+
+      .vs {
+        clear: both;
+        width: 100%;
+        height: auto;
+      }
+      .vdo {
+        display: block;
+        width: 100%;
+        height: auto;
       }
     </style>
   </head>
