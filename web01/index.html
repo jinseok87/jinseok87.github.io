@@ -180,10 +180,13 @@
         background-color: #ececec;
       } */
       .page_tit {
+        color: rgb(238, 179, 62);
+        text-shadow: 4px 0.5px 3px rgb(230, 3, 3);
         text-align: center;
         font-size: 32px;
         padding-top: 1.2em;
         padding-bottom: 0.8em;
+        line-height: 40px;
       }
       .lst {
         clear: both;
@@ -379,6 +382,7 @@
       }
       .fnb {
         clear: both;
+        position: relative;
       }
       .fnb a {
         clear: both;
@@ -388,16 +392,17 @@
         padding: 10px;
       }
       .addr {
-        padding-left: 24px;
+        position: absolute;
+        padding-left: 150px;
         color: #ececec;
-        padding-top: 20px;
-        font-size: 12px;
-        line-height: 2;
+        padding-top: 2px;
+        font-size: 13px;
+        line-height: 2.5;
       }
       .copyright {
-        padding-left: 24px;
+        padding-left: 10px;
         color: #fff;
-        padding-top: 10px;
+        padding-top: 150px;
       }
       /* ----------------------------------------------------- */
       .sel_box {
@@ -489,8 +494,8 @@
                   id="vdi2"
                   width="810"
                   height="460"
-                  src="https://www.youtube.com/watch?v=MyVoER9Q-xk"
-                  title="맥도날드에선 매일 매일 메리 크리스마스"
+                  src="https://www.youtube.com/embed/Oehlr0Z8yOU"
+                  title="점심을 제대로 ! 굿런치 맥런치!"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
@@ -501,16 +506,18 @@
               <li class="right">
                 <ul class="ico_lst">
                   <li>
-                    <a href="" target="vdo2" class="icon1">
-                      <h3 class="cate_tit">언제나 가까이 맥도날드</h3>
-                      <p class="cate_com">
-                        당신의 가까운 곳에 항상 맥도날드가 있습니다.
-                      </p>
+                    <a
+                      href="https://www.youtube.com/embed/Oehlr0Z8yOU"
+                      target="vdo2"
+                      class="icon1"
+                    >
+                      <h3 class="cate_tit">굿런치 ! 맥런치!</h3>
+                      <p class="cate_com">점심을 제대로 ! 굿런치 맥런치!</p>
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://youtu.be/uKTmvE1bWbE"
+                      href="https://www.youtube.com/embed/uKTmvE1bWbE"
                       target="vdo2"
                       class="icon2"
                     >
@@ -525,7 +532,7 @@
                   </li>
                   <li>
                     <a
-                      href="https://youtu.be/urzUA5mnSUY"
+                      href="https://www.youtube.com/embed/x2XSLDDpHK0"
                       target="vdo2"
                       class="icon3"
                     >
@@ -780,11 +787,19 @@
               <a href="member03.html">고객문의</a>
               <a href="member03.html">임차문의</a>
             </nav>
-            <p class="addr">
+            <div class="addr">
+              <ul>
+                <li>한국맥도날드(유)</li>
+                <li>| 대표이사 | 김기원</li>
+                <li>사업자등록번호 : 101-81-26409</li>
+                <li>전화주문 : 1600-5252</li>
+              </ul>
+            </div>
+            <!-- <p class="addr">
               한국맥도날드(유)<br />
               | 대표이사 | 김기원<br />사업자등록번호:101-81-26409<br />전화주문
               1600-5252
-            </p>
+            </p> -->
             <p class="copyright">
               COPYRIGHT © 2019 ALL RIGHTS RESERVED BY McDonald's.
             </p>
@@ -796,11 +811,6 @@
               <option value="https://kr.oledspace.com">OLED SPACE</option>
             </select>
           </div>
-          <script>
-            function sel_link(sel) {
-              location.href = sel.value;
-            }
-          </script>
         </div>
       </footer>
     </div>
