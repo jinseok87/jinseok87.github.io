@@ -1,808 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Mcdonald" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>맥도날드</title>
-    <meta
-      name="keywords"
-      content="햄버거, 햄버거추천, 메뉴추천, 아침메뉴, 점심메뉴, 저녁메뉴, 맥도날드"
-    />
-    <meta
-      name="description"
-      content="햄버거는 언제나 옳지 ~!!! 오늘은 햄버거 먹는 날 ~!"
-    />
+    <!-- 메타포 -->
+    <meta name="keywords" content="햄버거, 햄버거추천, 메뉴추천, 아침메뉴, 점심메뉴, 저녁메뉴, 맥도날드" />
+  <meta name="description" content="햄버거는 언제나 옳지 ~!!! 오늘은 햄버거 먹는 날 ~!" />
     <!-- 오픈그래프 -->
     <meta property="og:title" content="Mcdonald" />
     <meta property="og:desciption" content="" />
     <meta property="og:type" content="Web Site" />
-    <meta property="og:image" content="ahn.jpg" />
+    <meta property="og:image" content=""/>
     <!-- 파비콘 -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/web01/icon/favicon-16x16.png"
-    />
-    <!-- 스타일 연결 -->
-    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/web01/icon/favicon-16x16.png" />
+    <!-- 각 종 플러그인과 설정 파일 -->
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- 구형 브라우저 html5태그 인식 -->
+    <script src="./js/html5shiv.js"></script>
+    <!-- 구형 브라우저에서 css animation 인식 -->
+    <script src="./js/prefixfree.min.js"></script>
+    <!-- 구형 브라우저에서 미디어쿼리 인식 -->
+    <script src="./js/respond.min.js"></script>
+    <!-- jquery 플러그인 연결 -->
+    <script src="./js/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" href="./css/reset2.css">
+    <link rel="stylesheet" href="header.css">
     <style>
-      /* header.css */
-      .hd {
-        width: 100%;
-        height: 122px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 91;
-      }
-      .hd_wrap {
-        width: 1200px;
-        margin: 0 auto;
-      }
-      .hd:hover {
-        background-color: #fff;
-      }
-      .hd:hover .dp1 {
-        background-color: #fff;
-      }
-      .logo {
-        display: block;
-        width: 57px;
-        height: auto;
-        float: left;
-        margin: 30px 0px;
-      }
-      .logo img {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-      .tnb {
-        float: right;
-        margin: 30px 0px;
-      }
-      .tnb a {
-        padding: 0.5em;
-        font-size: 16px;
-        color: rgb(238, 179, 62);
-      }
-      .tnb :hover {
-        color: rgb(148, 26, 26);
-        font-weight: 700;
-      }
-      .tnb a:hover .dp1 {
-        font-weight: 700;
-        color: rgb(148, 26, 26);
-      }
-      .gnb {
-        clear: both;
-        width: 100%;
-      }
-      /* clear-fix 처리 */
-      .gnb:after {
-        content: "";
-        display: block;
-        clear: both;
-      }
-      .gnb > ul :after {
-        content: "";
-        display: block;
-        clear: both;
-      }
-      .gnb > ul > li {
-        float: left;
-        width: 20%;
-        height: 40px;
-        line-height: 40px;
-        position: relative;
-      }
-      .gnb li {
-        float: left;
-      }
+    /* header.css */
+    .hd { position:fixed; }
+    /* content */
+    .page { clear:both; width: 100%; }
+    .page_wrap { width: 1200px; margin: 0 auto; }
+    #page1, #page3 {background-color:#fbf9e98f; }
+    .page_tit {text-align: center;font-size: 32px;padding-top: 1.2em;padding-bottom: 0.8em;}
+    .lst { clear:both; width: 1200px; }
+    .lst:after { content:""; display:block; clear: both;}
+    .lst li { margin-bottom: 40px; }
+    .lst li.left { float:left; width: 816px; height: 459px; }
+    .lst li.right { float:right; width:350px; height: 459px; }
+    .ico_lst { clear:both; width: 100%; overflow:hidden; }
+    .ico_lst li a { display:block; background-repeat: no-repeat; 
+    background-position:0px center; background-size:auto 70%; 
+padding-left: 20px; }
+    /* .ico_lst li a.icon1 { background-image: url("./img/icon/ico_service_01.svg"); }
+    .ico_lst li a.icon2 { background-image: url("./img/icon/ico_service_02.svg");}
+    .ico_lst li a.icon3 { background-image: url("./img/icon/ico_service_03.svg"); } */
+    .cate_tit { color:#222; font-size:20px; padding-bottom: 0.5em; }
+    .cate_com { color:#222; font-size:15px; overflow:hidden;
+    white-space:nowrap; text-overflow:ellipsis; }
 
-      /* 메인메뉴 */
-      .gnb .dp1 {
-        display: block;
-        height: 40px;
-        text-align: center;
-        line-height: 18px;
-        color: rgb(238, 179, 62);
-        font-size: 22px;
-      }
+    #page2 { background-color: rgba(148, 26, 26, 0.109); }
+    .pic_lst { clear:both; width: 100%; padding-bottom: 80px; }
+    .pic_lst:after { content:""; display:block; clear:both; }
+    .pic_lst li { float:left; position:relative; margin-bottom: 40px; }
+    .pic_lst li a { display:block; width: 360px; margin-right: 40px;
+    overflow: hidden; height: 300px; }
+    .pic_lst li a:hover img { margin-left: 0; }
+    .pic_lst li a .hv_box { width: 360px; height: 300px; color:#fff; opacity:0; position:absolute; top:0; left: 0; z-index:10; transition-duration:0.8s; background-color:transparent; }
+    .pic_lst li a:hover .hv_box { opacity:1; }
+    .pic_tit { position:absolute; top:30px; left: 30px; 
+    text-shadow:0px 0px 3px red; }
+    .pic_com { position:absolute; right:30px; bottom:30px; 
+        text-shadow:0px 0px 3px blue; }
 
-      .gnb li:hover .dp1 {
-        color: rgb(148, 26, 26);
-      }
-      /* 서브메뉴------------ */
-      .gnb .sub {
-        display: none;
-        width: 100%;
-        height: auto;
-        position: absolute;
-        top: 40px;
-        background-color: #fff;
-        left: 0;
-        z-index: 90;
-        height: 124px;
-      }
-      .gnb:hover li .sub {
-        display: block;
-      }
-      .gnb li .sub li {
-        clear: both;
-        height: 30px;
-        line-height: 30px;
-        border-bottom: 1px solid #fff;
-      }
-      .gnb li .sub li a {
-        background-color: #fff;
-        color: rgb(238, 179, 62);
-        font-size: 20px;
-        display: block;
-        text-indent: 2em;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-      .gnb li .sub li:hover a {
-        color: rgb(148, 26, 26);
-        font-weight: 700;
-      }
+    #page3 { background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position:center center; height: 800px; background-image:url("./img/bg_partners.jpg"); overflow:hidden; }
+    #page3 .page_wrap { width: 100%;  }
+    .circle_lst { clear:both; width: 4455px; }
+    .circle_lst li { width: 200px; height: 200px; position:relative; border-radius:120px; overflow:hidden; background-color: #fff;
+    float:left; margin:28px;  }
+    .circle_lst.lst2 li { float:right; }
+    .circle_lst li a { display:block; width: 100%; height: 100%; }
+    .circle_lst li a img { display:block; width:160px; height:auto; 
+    position:absolute; top:50%; left: 20px; z-index:11; margin-top: -28px; }
 
-      .content {
-        clear: both;
-        width: 100%;
-      }
-      .vs {
-        clear: both;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
-      .vdo {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-      .page {
-        clear: both;
-        width: 100%;
-      }
-      .page_wrap {
-        width: 1200px;
-        margin: 0 auto;
-      }
-      /* #page1,
-      #page3 {
-        background-color: #ececec;
-      } */
-      .page_tit {
-        text-align: center;
-        font-size: 32px;
-        padding-top: 1.2em;
-        padding-bottom: 0.8em;
-      }
-      .lst {
-        clear: both;
-        width: 1200px;
-      }
-      .lst:after {
-        content: "";
-        display: block;
-        clear: both;
-      }
-      .lst li {
-        margin-bottom: 40px;
-      }
-      .lst li.left {
-        float: left;
-        width: 816px;
-        height: 459px;
-      }
-      .lst li.right {
-        float: right;
-        width: 350px;
-        height: 459px;
-      }
-      .ico_lst {
-        clear: both;
-        width: 100%;
-        overflow: hidden;
-      }
-      .ico_lst li a {
-        display: block;
-        background-repeat: no-repeat;
-        background-position: 0px center;
-        background-size: auto 70%;
-        padding-left: 20px;
-      }
-      /* .ico_lst li a.icon1 {
-        background-image: url("./img/icon/ico_service_01.svg");
-      }
-      .ico_lst li a.icon2 {
-        background-image: url("./img/icon/ico_service_02.svg");
-      }
-      .ico_lst li a.icon3 {
-        background-image: url("./img/icon/ico_service_03.svg");
-      } */
-      .cate_tit {
-        color: #222;
-        font-size: 20px;
-        padding-bottom: 0.5em;
-      }
-      .cate_com {
-        color: #222;
-        font-size: 15px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-      #page2 {
-        background-color: rgba(249, 249, 130, 0.3);
-      }
-      .pic_lst {
-        clear: both;
-        width: 100%;
-        padding-bottom: 80px;
-      }
-      .pic_lst:after {
-        content: "";
-        display: block;
-        clear: both;
-      }
-      .pic_lst li {
-        float: left;
-        position: relative;
-        margin-bottom: 40px;
-      }
-      .pic_lst li a {
-        display: block;
-        width: 360px;
-        margin-right: 40px;
-        overflow: hidden;
-        height: 300px;
-      }
-      /* .pic_lst li a img {
-        display: block;
-        width: 600px;
-        margin-left: -120px;
-        transition-duration: 0.8s;
-      } */
-      /* .pic_lst li a:hover img {
-        margin-left: 0;
-      } */
-      .pic_lst li a .hv_box {
-        width: 360px;
-        height: 600px;
-        color: rgb(255, 255, 255);
-        text-shadow: 0px 1px 3px rgb(230, 3, 3);
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 10;
-        transition-duration: 0.8s;
-        background-color: transparent;
-      }
-      .pic_lst li a:hover .hv_box {
-        opacity: 1;
-      }
-      .pic_tit {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        text-shadow: 0px 2px 3px rgb(230, 3, 3);
-      }
-      .pic_com {
-        position: absolute;
-        right: 30px;
-        top: 250px;
-        text-shadow: 0px 0px 3px rgb(230, 3, 3);
-      }
-      #page3 {
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        height: 100vh;
-        background-image: url("./img/bg_partners.jpg");
-        overflow: hidden;
-      }
-      #page3 .page_wrap {
-        width: 100%;
-      }
-      .circle_lst {
-        clear: both;
-        width: 4455px;
-      }
-      .circle_lst li {
-        width: 200px;
-        height: 200px;
-        position: relative;
-        border-radius: 120px;
-        overflow: hidden;
-        background-color: #fff;
-        float: left;
-        margin: 28px;
-      }
-      .circle_lst.lst2 li {
-        float: right;
-      }
-      .circle_lst li a {
-        display: block;
-        width: 100%;
-        height: 100%;
-      }
-      .circle_lst li a img {
-        display: block;
-        width: 160px;
-        height: auto;
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        z-index: 11;
-        margin-top: -28px;
-      }
-
-      .ft {
-        clear: both;
-        width: 100%;
-        height: 200px;
-        background-color: rgb(232, 48, 16);
-        padding-bottom: 50px;
-      }
-      .ft_wrap {
-        clear: both;
-        width: 1200px;
-        margin: 0 auto;
-        padding-top: 50px;
-      }
-      .ft_wrap:after {
-        content: "";
-        display: block;
-        clear: both;
-      }
-      .ft_logo {
-        float: left;
-        width: 150px;
-      }
-      .ft_logo img {
-        margin: 20px 70px;
-      }
-      /* ----------------------------------------------------- */
-      .mid_box {
-        float: left;
-        width: 760px;
-        padding-left: 100px;
-      }
-      .fnb {
-        clear: both;
-      }
-      .fnb a {
-        clear: both;
-        float: left;
-        color: rgb(255, 255, 255);
-        font-size: 14px;
-        padding: 10px;
-      }
-      .addr {
-        padding-left: 24px;
-        color: #ececec;
-        padding-top: 20px;
-        font-size: 12px;
-        line-height: 2;
-      }
-      .copyright {
-        padding-left: 24px;
-        color: #fff;
-        padding-top: 10px;
-      }
-      /* ----------------------------------------------------- */
-      .sel_box {
-        float: right;
-        border-bottom: 1px solid #fff;
-        height: 44px;
-        line-height: 44px;
-        text-align: center;
-        width: 140px;
-      }
-      #sel {
-        border: none;
-        outline: none;
-        background-color: transparent;
-        color: #fff;
-      }
-      #sel option {
-        color: #333;
-      }
+    /* footer.css */
     </style>
-  </head>
-  <body>
-    <div class="wrap">
-      <header class="hd">
+    <link rel="stylesheet" href="footer.css">
+    <script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var ht = $(window).height();
+            var tp = $(this).scrollTop();
+            if(tp>=600){
+                $(".hd").css("position","fixed");
+            } else {
+                $(".hd").css("position","absolute");
+            }
+        });
+        $
+        $("<ul class='circle_lst lst2'></ul>").insertAfter($(".circle_lst"));
+        $lst1_obj = $(".circle_lst li").clone();
+        $(".circle_lst.lst2").append($lst1_obj);
+    });    
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <header class="hd">
         <div class="hd_wrap">
-          <a href="" class="logo"></a>
-          <img src="./image/mainlogo.jpg" alt="메인로고" />
-          <nav class="tnb">
-            <a href="">장바구니</a>
-            <a href="">로그인</a>
-            <a href="">회원가입</a>
-          </nav>
-          <nav class="gnb">
-            <ul>
-              <li class="item1">
-                <a href="" class="dp1">Menu</a>
-                <ul class="sub">
-                  <li><a href="menu.html#page1">버거</a></li>
-                  <li><a href="menu.html#page2">맥모닝</a></li>
-                  <li><a href="menu.html#page3">맥런치</a></li>
+            <a href="index.html" class="logo"><img src="./image/mainlogo.jpg" alt="메인로고"></a>
+            <nav class="tnb">
+                <a href="">장바구니</a>
+                <a href="joinForm.html">로그인</a>
+                <a href="join.html">회원가입</a>
+            </nav>
+            <nav class="gnb">
+                <ul>
+                    <li class="item1">
+                        <a href="" class="dp1">Menu</a>
+                        <ul class="sub">
+                            <li><a href="menu.html#page1">버거</a></li>
+                            <li><a href="menu.html#page2">맥모닝</a></li>
+                            <li><a href="menu.html#page3">맥런치</a></li>
+                        </ul>
+                    </li>
+                    <li class="item2">
+                        <a href="" class="dp1">Side Menu</a>
+                        <ul class="sub">
+                          <li><a href="side.html#page1">스낵</a></li>
+                          <li><a href="side.html#page2">맥카페</a></li>
+                          <li><a href="side.html#page3">디저트</a></li>
+                        </ul>
+                      </li>
+                      <li class="item3">
+                        <a href="" class="dp1">Store</a>
+                        <ul class="sub">
+                          <li><a href="map.html#page1">매장찾기</a></li>
+                          <li><a href="map.html#page2">맥딜리버리</a></li>
+                          <li><a href="map.html#page3">맥드라이브</a></li>
+                        </ul>
+                      </li>
+                      <li class="item4">
+                        <a href="" class="dp1">Event</a>
+                        <ul class="sub">
+                          <li><a href="event.html#page1">진행중</a></li>
+                          <li><a href="event.html#page2">지난이벤트</a></li>
+                          <li><a href="event.html#page3">담청자게시판</a></li>
+                        </ul>
+                      </li>
+                      <li class="item5">
+                        <a href="" class="dp1">News</a>
+                        <ul class="sub">
+                          <li><a href="news.html#page1">프로모션</a></li>
+                          <li><a href="news.html#page2">새소식</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-              <li class="item2">
-                <a href="" class="dp1">Side Menu</a>
-                <ul class="sub">
-                  <li><a href="side.html#page1">스낵</a></li>
-                  <li><a href="side.html#page2">맥카페</a></li>
-                  <li><a href="side.html#page3">디저트</a></li>
-                </ul>
-              </li>
-              <li class="item3">
-                <a href="" class="dp1">Store</a>
-                <ul class="sub">
-                  <li><a href="map.html#page1">매장찾기</a></li>
-                  <li><a href="map.html#page2">맥딜리버리</a></li>
-                  <li><a href="map.html#page3">맥드라이브</a></li>
-                </ul>
-              </li>
-              <li class="item4">
-                <a href="" class="dp1">Event</a>
-                <ul class="sub">
-                  <li><a href="event.html#page1">진행중</a></li>
-                  <li><a href="event.html#page2">지난이벤트</a></li>
-                  <li><a href="event.html#page3">담청자게시판</a></li>
-                </ul>
-              </li>
-              <li class="item5">
-                <a href="" class="dp1">News</a>
-                <ul class="sub">
-                  <li><a href="news.html#page1">프로모션</a></li>
-                  <li><a href="news.html#page2">새소식</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
+            </nav>
         </div>
-      </header>
-      <div class="content">
+    </header>
+    <div class="content">
         <figure class="vs">
-          <video src="./video/video1.mp4" autoplay muted class="vdo"></video>
+            <video src="./video/video1.mp4" autoplay muted class="vdo"></video>
         </figure>
         <section class="page" id="page1">
-          <div class="page_wrap">
-            <h2 class="page_tit">당신에게 <br />Mcdonald가<br />필요한순간</h2>
-            <ul class="lst">
-              <li class="left">
-                <iframe
-                  name="vdo2"
-                  id="vdi2"
-                  width="810"
-                  height="460"
-                  src="https://www.youtube.com/watch?v=MyVoER9Q-xk"
-                  title="맥도날드에선 매일 매일 메리 크리스마스"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                >
-                  ></iframe
-                >
-              </li>
-              <li class="right">
-                <ul class="ico_lst">
-                  <li>
-                    <a href="" target="vdo2" class="icon1">
-                      <h3 class="cate_tit">언제나 가까이 맥도날드</h3>
-                      <p class="cate_com">
-                        당신의 가까운 곳에 항상 맥도날드가 있습니다.
-                      </p>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://youtu.be/uKTmvE1bWbE"
-                      target="vdo2"
-                      class="icon2"
-                    >
-                      <h3 class="cate_tit">
-                        맥도날드에 진심인 당신에게 돌려드립니다
-                      </h3>
-                      <p class="cate_com">
-                        맥도날드를 진심으로 사랑하는 당신께 리워드로
-                        돌려드립니다.
-                      </p>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://youtu.be/urzUA5mnSUY"
-                      target="vdo2"
-                      class="icon3"
-                    >
-                      <h3 class="cate_tit">작지만 큰 행복</h3>
-                      <p class="cate_com">
-                        작지만 큰 행복 불고기 버거 2000원 에그 불고기버거 3000원
-                      </p>
-                    </a>
-                  </li>
+            <div class="page_wrap">
+                <h2 class="page_tit">당신에게 <br />Mcdonald가<br />필요한순간</h2>
+                <ul class="lst">
+                    <li class="left">
+                        <iframe name="vdo2" id="vdo2" width="816" height="459"
+                            src="https://www.youtube.com/embed/MyVoER9Q-xk" 
+                            title="맥도날드에선 매일 매일 메리 크리스마스" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write;
+                            encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                    </li>
+                    <li class="right">
+                        <ul class="ico_lst">
+                            <li>
+                                <a href="https://www.youtube.com/embed/MyVoER9Q-xk" target="vdo2" class="icon1">
+                                    <h3 class="cate_tit">언제나 가까이 맥도날드</h3>
+                                    <p class="cate_com">당신의 가까운 곳에 항상 맥도날드가 있습니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/embed/uKTmvE1bWbE" target="vdo2" class="icon2">
+                                    <h3 class="cate_tit">당신에게 돌려드립니다</h3>
+                                    <p class="cate_com">맥도날드를 진심으로 사랑하는 당신께 리워드로
+                                        돌려드립니다.</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/embed/x2XSLDDpHK0" target="vdo2" class="icon3">
+                                    <h3 class="cate_tit">작지만 큰 행복</h3>
+                                    <p class="cate_com">작지만 큰 행복 불고기 버거 2000원 에그 불고기버거 3000원</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-            </ul>
-          </div>
+            </div>
         </section>
         <section class="page" id="page2">
-          <div class="page_wrap">
-            <h2 class="page_tit">Mc Donald's NEWS</h2>
-            <ul class="pic_lst">
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc1.jpg"
-                    alt="빠삭하게 빠져드는 맛! 맥크리스피!!"
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">빠삭하게<br />빠져드는맛!</h3>
-                    <p class="pic_com">맥크리스피!</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc2.jpg"
-                    alt="빠져들어! 행운의 원더랜드"
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">빠져들어 ! 행운의 원더랜드</h3>
-                    <p class="pic_com">100% 당첨에 빠져들어 !</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc3.jpg"
-                    alt="달콤한 행복을 먹어요 "
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">달콤한 행복을 먹어요</h3>
-                    <p class="pic_com">new 해피스낵</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc4.jpg"
-                    alt="색다른 아침을 원한다면 맥그리들"
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">색다른 아침을 원한다면</h3>
-                    <p class="pic_com">new 맥그리들</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc5.jpg"
-                    alt="제주 한라봉 칠러"
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">상큼한 하늘을 칠러~!!</h3>
-                    <p class="pic_com">제주 한라봉 칠러</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc6.jpg"
-                    alt="버거 세트 하루종일 4,500원"
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">하루종일 4,500원~!</h3>
-                    <p class="pic_com">불고기 버거 세트</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc7.jpg"
-                    alt="맥모닝 콤보를 만나보세요"
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">커피 한 잔 가격으로 머핀과 커피를!</h3>
-                    <p class="pic_com">맥모닝 콤보</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc8.jpg"
-                    alt="마이 맥도날드 리워드 출시!"
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">마이 맥도날드 리워드 출시!</h3>
-                    <p class="pic_com">첫 적립시 1500 포인트 제공!</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img
-                    src="./image/maindc9.jpg"
-                    alt="세상 처음 맛보는 치킨버거"
-                    class="pic"
-                  />
-                  <div class="hv_box">
-                    <h3 class="pic_tit">세상 처은 맛보는 치킨버거</h3>
-                    <p class="pic_com">맥크리스피</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
+            <div class="page_wrap">
+                <h2 class="page_tit">Mc Donald's NEWS</h2>
+                <ul class="pic_lst">
+                    <li>
+                        <a href="">
+                            <img src="./image/maindc1.jpg"
+                            alt="빠삭하게 빠져드는 맛! 맥크리스피!!"
+                            class="pic">
+                            <div class="hv_box">
+                                <h3 class="pic_tit">빠삭하게<br />빠져드는맛!</h3>
+                                <p class="pic_com">맥크리스피!</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                              src="./image/maindc2.jpg"
+                              alt="빠져들어! 행운의 원더랜드"
+                              class="pic"
+                            />
+                            <div class="hv_box">
+                              <h3 class="pic_tit">빠져들어 ! 행운의 원더랜드</h3>
+                              <p class="pic_com">100% 당첨에 빠져들어 !</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                              src="./image/maindc3.jpg"
+                              alt="달콤한 행복을 먹어요 "
+                              class="pic"
+                            />
+                            <div class="hv_box">
+                              <h3 class="pic_tit">달콤한 행복을 먹어요</h3>
+                              <p class="pic_com">new 해피스낵</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                              src="./image/maindc4.jpg"
+                              alt="색다른 아침을 원한다면 맥그리들"
+                              class="pic"
+                            />
+                            <div class="hv_box">
+                              <h3 class="pic_tit">색다른 아침을 원한다면</h3>
+                              <p class="pic_com">new 맥그리들</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                          <img
+                            src="./image/maindc5.jpg"
+                            alt="제주 한라봉 칠러"
+                            class="pic"
+                          />
+                          <div class="hv_box">
+                            <h3 class="pic_tit">상큼한 하늘을 칠러~!!</h3>
+                            <p class="pic_com">제주 한라봉 칠러</p>
+                          </div>
+                        </a>
+                      </li>
+                    <li>
+                        <a href="">
+                            <img
+                              src="./image/maindc6.jpg"
+                              alt="버거 세트 하루종일 4,500원"
+                              class="pic"
+                            />
+                            <div class="hv_box">
+                              <h3 class="pic_tit">하루종일 4,500원~!</h3>
+                              <p class="pic_com">불고기 버거 세트</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                              src="./image/maindc7.jpg"
+                              alt="맥모닝 콤보를 만나보세요"
+                              class="pic"
+                            />
+                            <div class="hv_box">
+                              <h3 class="pic_tit">커피 한 잔 가격으로 머핀과 커피를!</h3>
+                              <p class="pic_com">맥모닝 콤보</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                              src="./image/maindc8.jpg"
+                              alt="마이 맥도날드 리워드 출시!"
+                              class="pic"
+                            />
+                            <div class="hv_box">
+                              <h3 class="pic_tit">마이 맥도날드 리워드 출시!</h3>
+                              <p class="pic_com">첫 적립시 1500 포인트 제공!</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img
+                              src="./image/maindc9.jpg"
+                              alt="세상 처음 맛보는 치킨버거"
+                              class="pic"
+                            />
+                            <div class="hv_box">
+                              <h3 class="pic_tit">세상 처은 맛보는 치킨버거</h3>
+                              <p class="pic_com">맥크리스피</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </section>
         <section class="page" id="page3">
-          <div class="page_wrap">
-            <h2 class="page_tit">burger<br />&<br />side</h2>
-            <ul class="circle_lst lst1">
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/burger1.jpg"
-                    alt="빅맥"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/burger2.jpg"
-                    alt="맥크리스피 디럭스버거"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/burger3.jpg"
-                    alt="맥스파이시 상하이버거"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/burger4.jpg"
-                    alt="더블 블고기버거"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/burger5.jpg"
-                    alt="1955버거"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/burger6.jpg"
-                    alt="불고기버거"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/side1.jpg"
-                    alt="치킨토마토스낵랩"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/side4.jpg"
-                    alt="상하이치킨스낵랩"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/side5.jpg"
-                    alt="후렌치후라이"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/side6.jpg"
-                    alt="해쉬브라운"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/side7.jpg"
-                    alt="맥너겟"
-                    class="thumb"
-                /></a>
-              </li>
-              <li>
-                <a href=""
-                  ><img
-                    src="./image/burger n side/side8.jpg"
-                    alt="골든 모짜렐라 치즈스틱"
-                    class="thumb"
-                /></a>
-              </li>
-            </ul>
-          </div>
+            <div class="page_wrap">
+                <h2 class="page_tit">burger<br />&<br />side</h2>
+                <ul class="circle_lst lst1">
+                    <li><a href=""><img src="./image/burger n side/burger6.jpg" alt="버거6" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger5.jpg" alt="버거5" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger4.jpg" alt="버거4" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger3.jpg" alt="버거4" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger2.jpg" alt="버거2" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger1.jpg" alt="버거1" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger2.jpg" alt="버거2" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger3.jpg" alt="버거3" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger4.jpg" alt="버거4" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger5.jpg" alt="버거5" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/burger6.jpg" alt="버거6" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/side1.jpg" alt="사이드1" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/side4.jpg" alt="사이드4" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/side5.jpg" alt="사이드5" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/side6.jpg" alt="사이드6" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/side7.jpg" alt="사이드7" class="thumb"></a></li>
+                    <li><a href=""><img src="./image/burger n side/side8.jpg" alt="사이드8" class="thumb"></a></li>
+                </ul>
+            </div>
         </section>
-      </div>
-      <footer class="ft">
-        <div class="ft_wrap">
-          <div class="ft_logo">
-            <img src="./image/mainlogo.jpg" alt="하단로고" />
-          </div>
-          <div class="mid_box">
-            <nav class="fnb">
-              <a href="member01.html" class="dpc">개인정보 처리 방침</a>
-              <a href="member02.html" class="dpc">위치정보이용약관</a>
-              <a href="member03.html">고객문의</a>
-              <a href="member03.html">임차문의</a>
-            </nav>
-            <p class="addr">
-              한국맥도날드(유)<br />
-              | 대표이사 | 김기원<br />사업자등록번호:101-81-26409<br />전화주문
-              1600-5252
-            </p>
-            <p class="copyright">
-              COPYRIGHT © 2019 ALL RIGHTS RESERVED BY McDonald's.
-            </p>
-          </div>
-          <div class="sel_box">
-            <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
-              <option value="">패밀리 사이트</option>
-              <option value="https://www.lgdisplay.com/kr">LG Display</option>
-              <option value="https://kr.oledspace.com">OLED SPACE</option>
-            </select>
-          </div>
-          <script>
-            function sel_link(sel) {
-              location.href = sel.value;
-            }
-          </script>
-        </div>
-      </footer>
     </div>
-  </body>
+    <footer class="ft">
+        <div class="ft_wrap">
+            <div class="ft_logo"><img src="./image/mainlogo.jpg" alt="하단로고"></div>
+            <div class="mid_box">
+                <div class="fnb_wrap">
+                    <nav class="fnb">
+                        <a href="member01.html" class="dpc">개인정보 처리 방침</a>
+                        <a href="member02.html" class="dpc">위치정보이용약관</a>
+                        <a href="member03.html">고객문의</a>
+                        <a href="member03.html">임차문의</a>
+                    </nav>
+                </div>
+                <p class="addr">
+                    한국맥도날드(유)<br />
+                    | 대표이사 | 김기원<br />사업자등록번호:101-81-26409<br />전화주문
+                    1600-5252
+                  </p>
+                  <p class="copyright">
+                    COPYRIGHT © 2019 ALL RIGHTS RESERVED BY McDonald's.
+                  </p>
+            </div>
+            <div class="sel_box">
+                <select name="sel" id="sel" class="sel" onchange="sel_link(this)">
+                    <option value="">패밀리 사이트</option>
+                    <option value="https://www.lgdisplay.com/kr">LG Display</option>
+                    <option value="https://kr.oledspace.com">OLED SPACE</option>
+                </select>
+            </div>
+            <script>
+            function sel_link(sel){
+                location.href = sel.value;
+            }
+            </script>
+        </div>
+    </footer>
+</div>
+</body>
 </html>
