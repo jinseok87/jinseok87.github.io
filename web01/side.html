@@ -44,12 +44,9 @@
 
     .page_title { padding-top: 1em; }
     .home { color:#333; }
-    .to_top { position:fixed; bottom:80px; right:80px; z-index:999; 
-    background-color:rgba(11,11,11,0.75); color:#fff; display:block; width: 60px;
-    height: 60px; line-height: 60px; text-align: center; font-size:20px; border-radius:32px; visibility:hidden; transition-duration:0.8s; }
-    .to_top:hover { background-color: deepskyblue; }
-    .to_top.on { visibility: visible; }
+
     </style>
+    <link rel="stylesheet" href="sub.css">
     <link rel="stylesheet" href="footer.css">
     <script>
     $(document).ready(function(){
@@ -72,7 +69,7 @@
 <div class="wrap">
     <header class="hd">
         <div class="hd_wrap">
-            <a href="" class="logo"><img src="./image/mainlogo.jpg" alt="메인로고"></a>
+            <a href="index.html" class="logo"><img src="./image/mainlogo.jpg" alt="메인로고"></a>
             <nav class="tnb">
                 <a href="">장바구니</a>
                 <a href="">로그인</a>
@@ -81,7 +78,7 @@
             <nav class="gnb">
                 <ul>
                     <li class="item1">
-                        <a href="" class="dp1">Menu</a>
+                        <a href="menu.html#page1" class="dp1">Menu</a>
                         <ul class="sub">
                             <li><a href="menu.html#page1">버거</a></li>
                             <li><a href="menu.html#page2">맥모닝</a></li>
@@ -89,7 +86,7 @@
                         </ul>
                     </li>
                     <li class="item2">
-                        <a href="" class="dp1">Side Menu</a>
+                        <a href="sode.html#page1" class="dp1">Side Menu</a>
                         <ul class="sub">
                           <li><a href="side.html#page1">스낵</a></li>
                           <li><a href="side.html#page2">맥카페</a></li>
@@ -97,7 +94,7 @@
                         </ul>
                       </li>
                       <li class="item3">
-                        <a href="" class="dp1">Store</a>
+                        <a href="map.html#page1" class="dp1">Store</a>
                         <ul class="sub">
                           <li><a href="map.html#page1">매장찾기</a></li>
                           <li><a href="map.html#page2">맥딜리버리</a></li>
@@ -105,7 +102,7 @@
                         </ul>
                       </li>
                       <li class="item4">
-                        <a href="" class="dp1">Event</a>
+                        <a href="event.html#page1" class="dp1">Event</a>
                         <ul class="sub">
                           <li><a href="event.html#page1">진행중</a></li>
                           <li><a href="event.html#page2">지난이벤트</a></li>
@@ -113,7 +110,7 @@
                         </ul>
                       </li>
                       <li class="item5">
-                        <a href="" class="dp1">News</a>
+                        <a href="news.html#page1" class="dp1">News</a>
                         <ul class="sub">
                           <li><a href="news.html#page1">프로모션</a></li>
                           <li><a href="news.html#page2">새소식</a></li>
@@ -123,7 +120,7 @@
             </nav>
         </div>
     </header>
-    <div class="content">
+    <div class="content" id ="page1">
         <figure class="vs">
             <img src="./image/back.jpg" alt="비주얼">
         </figure>
@@ -147,7 +144,50 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title">스낵</h2>
-
+                <ul class="pd_lst">
+                <li>
+                    <a href="" class="pd_link">
+                        <img src="./image/snack/snack1.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">츄러스</h3>
+                        </img>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pd_link">
+                        <img src="./image/snack/snack2.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">치킨 토마토 스낵랩</h3>
+                        </img>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pd_link">
+                        <img src="./image/snack/snack3.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">불고기 버거</h3>
+                        </img>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pd_link">
+                        <img src="./image/snack/snack4.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">필레 오피쉬</h3>
+                        </img>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pd_link">
+                        <img src="./image/snack/snack5.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">아메리카노(라지)</h3>
+                        </img>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pd_link">
+                        <img src="./image/snack/snack6.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">카페라떼(라지)</h3>
+                        </img>
+                    </a>
+                </li>
+            </ul>
             </div>
         </section>
     </div>
@@ -175,6 +215,44 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title">맥카페</h2>
+                <ul class="pd_lst">
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/cafe/cafe1.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">카페라떼</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/cafe/cafe2.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">디카페인 카페라떼</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/cafe/cafe3.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">아이스 카페라떼</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/cafe/cafe4.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">디파케인 아이스 카페라떼</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/cafe/cafe5.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">아메리카노</h3>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/cafe/cafe6.png" alt="" class="pd_img">
+                            <h3 class="pd_tit">디카페인 아메리카노</h3>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>
@@ -202,7 +280,71 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title">디저트</h2>
-
+                <ul class="pd_lst">
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert1.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">츄러스</h3>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert2.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">베리 스트로베리 맥플러리</h3>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert3.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">오레오 맥플러리</h3>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert4.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">딸기 오레오 맥플러리</h3>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert5.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">초코 오레오 맥플러리</h3>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert6.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">스트로베리콘</h3>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert7.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">아이스크림콘</h3>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert8.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">초코콘</h3>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/dessert/dessert9.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">바닐라 선데이 아이스크림</h3>
+                            </img>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>

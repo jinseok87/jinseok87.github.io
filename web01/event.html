@@ -44,12 +44,13 @@
 
     .page_title { padding-top: 1em; }
     .home { color:#333; }
-    .to_top { position:fixed; bottom:80px; right:80px; z-index:999; 
-    background-color:rgba(11,11,11,0.75); color:#fff; display:block; width: 60px;
-    height: 60px; line-height: 60px; text-align: center; font-size:20px; border-radius:32px; visibility:hidden; transition-duration:0.8s; }
-    .to_top:hover { background-color: deepskyblue; }
-    .to_top.on { visibility: visible; }
+    .pd_com{text-align: center;color: rgb(211, 27, 27);}
+    .pd_img{position:relative}
+    .end_st{width: 307px; height: 236; position: absolute; z-index: 10; opacity: 0.6; margin-top: -241px;}
+    .end_st:hover{ opacity: 0; transition-duration:  1.5s;}
+    
     </style>
+    <link rel="stylesheet" href="sub.css">
     <link rel="stylesheet" href="footer.css">
     <script>
     $(document).ready(function(){
@@ -123,7 +124,7 @@
             </nav>
         </div>
     </header>
-    <div class="content">
+    <div class="content" id="page1">
         <figure class="vs">
             <img src="./image/back.jpg" alt="비주얼">
         </figure>
@@ -147,7 +148,56 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title">진행중</h2>
-
+                <ul class="pd_lst">
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/event/event1.jpg" alt="" class="pd_img">
+                                <h3 class="pd_tit">달콤한 행복을 먹어요</h3>
+                                <p class="pd_com">New 해피스낵!</p>
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/event/event2.jpg" alt="" class="pd_img">
+                            <h3 class="pd_tit">빠삭하게 빠져드는 맛!</h3>
+                            <p class="pd_com">맥크리스피!!</p>
+                        </img>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pd_link">
+                        <img src="./image/event/event3.jpg" alt="" class="pd_img">
+                        <h3 class="pd_tit">100% 당첨에 빠져들어!</h3>
+                        <p class="pd_com">행운의 원더랜드</p>
+                    </img>
+                </a>
+            </li>
+            <li>
+                <a href="" class="pd_link">
+                    <img src="./image/event/event4.jpg" alt="" class="pd_img">
+                    <h3 class="pd_tit">색다른 아침을 우너한다면 ?</h3>
+                    <p class="pd_com">NEW 맥그리들</p>
+                </img>
+            </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/event/event5.jpg" alt="" class="pd_img">
+                            <h3 class="pd_tit">제주산 한라봉이 가득!</h3>
+                            <p class="pd_com">제주 한라봉 칠러</p>
+                        </img>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pd_link">
+                        <img src="./image/event/event6.png" alt="" class="pd_img">
+                        <h3 class="pd_tit">버거세트 4,500원!!</h3>
+                        <p class="pd_com">하루종일 불고기버거세트 4,500원</p>
+                            </img>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>
@@ -175,6 +225,80 @@
         <section class="page">
             <div class="page_wrap">
                 <h2 class="page_title">지난이벤트</h2>
+                <ul class="pd_lst">
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent1.jpg" alt="" class="pd_img">
+                                <h3 class="pd_tit">88년 서울 풍미 넘치는 맛 그대로!</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent2.jpg" alt="" class="pd_img">
+                                <h3 class="pd_tit">맥도날드 행운의 원더랜드</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent3.jpg" alt="" class="pd_img">
+                                <h3 class="pd_tit">돌아온 한국 마늘의 맛</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent4.jpg" alt="" class="pd_img">
+                                <h3 class="pd_tit">맥도날드가 찾은 한국의 맛</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent5.jpg" alt="" class="pd_img">
+                                <h3 class="pd_tit">해피스낵으로 일상 속 확실한 행복을 즐겨요</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent6.jpg" alt="" class="pd_img">
+                                <h3 class="pd_tit">담콤한 아이스크림과 진~한 라떼의 만남</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent7.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">맥딜리버리에서 페이코로 첫 결제 시 2000원 할인</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent8.png" alt="" class="pd_img">
+                                <h3 class="pd_tit">겉은 바삭! 속은 쫄~~깃~!</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" class="pd_link">
+                            <img src="./image/endevent/endevent9.jpg" alt="" class="pd_img">
+                                <h3 class="pd_tit">상큼함이 하늘을 칠러~!~!</h3>
+                                <img src="./image/endevent/endeventstemp.jpg" alt="" class="end_st">
+                            </img>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </section>
     </div>

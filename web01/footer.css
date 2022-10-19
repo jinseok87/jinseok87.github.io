@@ -29,42 +29,28 @@
     width: 760px;
     padding-left: 100px;
   }
-
   .fnb {
     clear: both;
-    width: 150px;
-    height: 150px;
-    /* background-color: blue; */
   }
   .fnb a {
-    display: block;
-    /* clear: both; */
+    clear: both;
     float: left;
     color: rgb(255, 255, 255);
     font-size: 14px;
     padding: 10px;
   }
-
   .addr {
-    float:left;
     padding-left: 24px;
     color:rgb(255, 255, 255);
-    padding-top: -40px;
-    font-size: 14px;
-    line-height: 2.5;
-    margin-top: -145px;
-    margin-left: 60px;
-  }
-  .addr p {
-    clear: both;
-    text-align: center;
+    padding-top: 20px;
+    font-size: 12px;
+    line-height: 2;
   }
 
 .copyright {
-  clear: both;
     padding-left: 24px;
     color: #fff;
-    margin-top: -10px;
+    padding-top: 10px;
   }
   .sel_box {
     float: right;
