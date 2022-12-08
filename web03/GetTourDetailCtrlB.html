@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="detail.css">
+</head>
+
+<body>
+    <div id="nav-group">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+                <div class="navbar-brand">
+                    <a class="navbar-item" id="logo" href="./index.html"> <img src="./img/logo3.png" alt="메인로고"> </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start" id="gnb">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateA.html" class="navbar-link"> 관광 </a>
+                            <div class="navbar-dropdown cate" id="cate01"><a href="GetTourDetailCtrlA.html#page1">사려니숲길</a><a
+                                    href="./GetTourDetailCtrlA.html#page2">성산일출봉</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateB.html" class="navbar-link cate"> 체험 </a>
+                            <div class="navbar-dropdown cate" id="cate02"><a href="./GetTourDetailCtrlB.html#page1">감귤체험농장</a><a
+                                    href="./GetTourDetailCtrlB.html#page2">슬리핑라이언</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateC.html" class="navbar-link cate"> 행사 </a>
+                            <div class="navbar-dropdown cate" id="cate03"><a href="./GetTourDetailCtrlC.html#page1">빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</a><a
+                                    href="./GetTourDetailCtrlC.html#page2">제주민속촌 몬딱 놀당갑 SHOW</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateD.html" class="navbar-link cate"> 축제 </a>
+                            <div class="navbar-dropdown cate" id="cate04"><a href="./GetTourDetailCtrlD.html#page1">최남단 모슬포 방어축제</a><a
+                                    href="./GetTourDetailCtrlD.html#page2">휴애리 동백축제</a><a href="./GetTourDetailCtrlD.html#page3">달과 별이 내려앉은 신산
+                                    빛의거리</a><a href="./GetTourDetailCtrlD.html#page4">마노르블랑 핑크뮬리축제</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateE.html" class="navbar-link cate"> 숙박 </a>
+                            <div class="navbar-dropdown cate" id="cate05"><a href="./GetTourDetailCtrlE.html#page1">나미송 머무는 곳</a><a
+                                    href="./GetTourDetailCtrlE.html#page2">롯데호텔 제주</a><a href="./GetTourDetailCtrlE.html#page3">신라호텔제주</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateF.html" class="navbar-link cate"> 음식 </a>
+                            <div class="navbar-dropdown cate" id="cate06"><a href="./GetTourDetailCtrlF.html#page1">명진전복</a><a
+                                    href="./GetTourDetailCtrlF.html#page2">濟州膳제주선</a><a href="./GetTourDetailCtrlF.html#page3">르 쉬느아 (Le Chinois)</a><a
+                                    href="./GetTourDetailCtrlF.html#page4">몽상드애월 (몽상)</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateG.html" class="navbar-link cate"> 쇼핑 </a>
+                            <div class="navbar-dropdown cate" id="cate07"><a href="./GetTourDetailCtrlG.html#page1">서귀포매일올레시장</a><a
+                                    href="./GetTourDetailCtrlG.html#page2">제주관광공사 중문면세점</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable single">
+                            <a class="navbar-link"> 관광안내 </a>
+                            <div class="navbar-dropdown single">
+                                <a class="navbar-item" href="GetNoticeListCtrl.html"> 공지사항 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-end" id="tnb">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="agree.html" class="button ">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a href="login.html" class="button "> Log in </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="content" id="page1">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="GetTourCateListCtrlcateB.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="GetTourCateListCtrlcateB.html">
+                        <span>체험</span>
+                    </a>
+                </li>
+                <li class="is-active">
+                    <a href="#" aria-current="page1">감귤체험농장</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/2experience/Experience1.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td>
+                                <span>체험</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>A0005</p> <input type="hidden" name="tourno" id="tourno" value="A0003" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>감귤체험농장</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>제주 겨울, 제일 먼저 떠오르는 모습은 시골 마을 돌담 위로 주렁주렁 매달린 잘 익은 주황빛의 감귤 아닐까? 예나 지금이나 제주의 겨울에 감귤이 빠질 수 없다. 조선시대 제주에 유배 왔던 추사 김정희는 자신의 유배가옥에
+                                    “귤중옥”이란 낭만 가득한 이름을 붙였다. “매화, 국화, 대나무는 서울에도 있지만 귤은 내가 사는 곳에만 있다. 귤을 속과 겉이 다 깨끗하다. 높은 지조와 향기로운 덕은 최고다”라는 말을 남겼다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>감귤이 제철인 겨울에는 감귤 체험과 감귤 카페를 찾는 여행객으로 북적인다. 동네 마을마다 특색 있는 포토존을 갖춘 감귤 체험농장이 많다. 귤모자 쓰고 감귤밭에서 찍는 사진 한장은 겨울 제주 여행에 빠질 수 없는 코스다.
+                                    감귤따기 체험을 하며 감귤을 원 없이 먹을 수 있고 내가 딴 감귤을 정해진 무게만큼 가지고 갈 수 있다. 귤밭 안에 테이블을 넣고 운영하는 이색 카페와 다양한 감귤 디저트 가득한 제주의 겨울은 귤만큼이나 새콤달콤하다.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d426482.4566082086!2d126.30558256440993!3d33.373828276422174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350ce2ac27f22fa1%3A0x5cbac978dca6ca37!2z6rCQ6rek7LK07ZeY64aN7J6l!5e0!3m2!1sko!2skr!4v1669338865653!5m2!1sko!2skr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </div>
+
+    <div class="content" id="page2">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="GetTourCateListCtrlcateB.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="GetTourCateListCtrlcateB.html">
+                        <span>체험</span>
+                    </a>
+                </li>
+                <li class="is-active">
+                    <a href="#" aria-current="page2">슬리핑라이언</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/2experience/Experience2.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td>
+                                <span>관광</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>A0003</p> <input type="hidden" name="tourno" id="tourno" value="A0003" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>슬리핑라이언</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>잠을 깨우는 핸드폰 모닝콜, 소란스러운 도로의 자동차 소리, 귀를 아프게 하는 도시의 소음과 일상에서 벗어나고 싶다면 슬리핑라이언 ‘사운드워킹 체험’을 추천한다. 슬리핑라이언의 사운드워킹은 오롯이 자연의 소리로 가득한
+                                    시간으로 곶자왈의 리듬을 느껴보는
+                                    생태관광체험이다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>체험은 사운드스케이프 감독님을 따라 헤드폰을 쓰고 발밑의 나뭇잎과 돌, 물과 바람, 산새 소리에 귀 기울이며 제주의 곶자왈 숲을 걷는다. 사운드워킹은 운동이 아닌 자연을 천천히 느끼기 위한 산책이기 때문에 조용히 그리고
+                                    천천히 걸으며 들려오는 소리에 집중한다.
+                                </p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <iframe class="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1804.7147429270221!2d126.26266410949296!3d33.32286216811044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c5d7e285c1f1d%3A0x6c5e461188823d3c!2z7ZmY7IOB7Iiy6rO27J6Q7JmI6rO17JuQ!5e0!3m2!1sko!2skr!4v1670476811845!5m2!1sko!2skr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </div>
+
+    <div class="buttons">
+        <a href="GetTourCateListCtrlcateB.html" class="button">전체 목록</a>
+    </div>
+    <footer class="footer">
+        <div class="has-text-centered">
+            <p>
+                <strong>제주관광공사</strong>
+                (63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터 / 제주관광정보센터 TEL : (064)740-6000 / FAX : (064)740-6090~1<br>
+
+                COPYRIGHT ⓒ JEJU TOURISM ORGANIZATION. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

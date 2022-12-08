@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <div id="nav-group">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+                <div class="navbar-brand">
+                    <a class="navbar-item" id="logo" href="./index.html"> <img src="./img/logo3.png" alt="메인로고"> </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start" id="gnb">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateA.html" class="navbar-link"> 관광 </a>
+                            <div class="navbar-dropdown cate" id="cate01"><a href="GetTourDetailCtrlA.html#page1">사려니숲길</a><a
+                                    href="./GetTourDetailCtrlA.html#page2">성산일출봉</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateB.html" class="navbar-link cate"> 체험 </a>
+                            <div class="navbar-dropdown cate" id="cate02"><a href="./GetTourDetailCtrlB.html#page1">감귤체험농장</a><a
+                                    href="./GetTourDetailCtrlB.html#page2">슬리핑라이언</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateC.html" class="navbar-link cate"> 행사 </a>
+                            <div class="navbar-dropdown cate" id="cate03"><a href="./GetTourDetailCtrlC.html#page1">빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</a><a
+                                    href="./GetTourDetailCtrlC.html#page2">제주민속촌 몬딱 놀당갑 SHOW</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateD.html" class="navbar-link cate"> 축제 </a>
+                            <div class="navbar-dropdown cate" id="cate04"><a href="./GetTourDetailCtrlD.html#page1">최남단 모슬포 방어축제</a><a
+                                    href="./GetTourDetailCtrlD.html#page2">휴애리 동백축제</a><a href="./GetTourDetailCtrlD.html#page3">달과 별이 내려앉은 신산
+                                    빛의거리</a><a href="./GetTourDetailCtrlD.html#page4">마노르블랑 핑크뮬리축제</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateE.html" class="navbar-link cate"> 숙박 </a>
+                            <div class="navbar-dropdown cate" id="cate05"><a href="./GetTourDetailCtrlE.html#page1">나미송 머무는 곳</a><a
+                                    href="./GetTourDetailCtrlE.html#page2">롯데호텔 제주</a><a href="./GetTourDetailCtrlE.html#page3">신라호텔제주</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateF.html" class="navbar-link cate"> 음식 </a>
+                            <div class="navbar-dropdown cate" id="cate06"><a href="./GetTourDetailCtrlF.html#page1">명진전복</a><a
+                                    href="./GetTourDetailCtrlF.html#page2">濟州膳제주선</a><a href="./GetTourDetailCtrlF.html#page3">르 쉬느아 (Le Chinois)</a><a
+                                    href="./GetTourDetailCtrlF.html#page4">몽상드애월 (몽상)</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateG.html" class="navbar-link cate"> 쇼핑 </a>
+                            <div class="navbar-dropdown cate" id="cate07"><a href="./GetTourDetailCtrlG.html#page1">서귀포매일올레시장</a><a
+                                    href="./GetTourDetailCtrlG.html#page2">제주관광공사 중문면세점</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable single">
+                            <a class="navbar-link"> 관광안내 </a>
+                            <div class="navbar-dropdown single">
+                                <a class="navbar-item" href="GetNoticeListCtrl.html"> 공지사항 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-end" id="tnb">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="agree.html" class="button ">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a href="login.html" class="button "> Log in </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
+        <ul style="float:right;">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./GetTourDetailCtrlE.html">전체 장소</a></li>
+            <li class="is-active"><a href="#" aria-current="page"><span>음식</span></a></li>
+        </ul>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">장소 상세보기</h1>
+            <div id="con">
+                <div class="tile is-ancestor columns" style="padding-bottom:40px;">
+                    <div class="tile is-3" style="box-sizing:border-box;">
+                        <article class="tile is-child is-one-third notification"
+                            style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+                            <p class="title">명진전복</p>
+                            <p class="subtitle">
+                                <span>음식</span>
+                            </p>
+                            <figure class="image is-4by3">
+                                <img src="./img/6food/food1.jpg" alt="명진전복">
+                            </figure>
+                            <div class="content" style="margin:10px;">
+                                <p class="item_com">바로 옆 양식장에서 키운 전복으로 구이, 죽, 회, 돌솥밥 등을 차린다.
+                                    대표 메뉴는 전복돌솥밥과 전복구이. 돌솥밥은 전복 내장인 ‘게웃’을 섞은 밥에 단호박, 고구마, 당근을 올렸다.
+                                    밥 위에 전복 살과 고구마를 올려 한 숟갈 먹으면 고소하고 쌉싸래한 게웃의 향과 고구마의 단맛이 절묘하게 어우러진다.</p>
+                            </div>
+                            <a href="./GetTourDetailCtrlF.html#page1" class="button ">자세히 보기</a>
+                        </article>
+                    </div>
+
+                    <div class="tile is-3" style="box-sizing:border-box;">
+                        <article class="tile is-child is-one-third notification"
+                            style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+                            <p class="title">濟州膳제주선</p>
+                            <p class="subtitle"><span>음식</span></p>
+                            <figure class="image is-4by3">
+                                <img src="./img/6food/food2.jpg" alt="濟州膳제주선">
+                            </figure>
+                            <div class="content" style="margin:10px;">
+                                <p class="item_com">신선한 제철 식재료와 특산물로 정성껏 차린 한 상에 제주 자연과 계절을 고스란히 담았습니다.
+                                    미식가들의 입맛을 사로잡는 제주 성게 미역국, 통갈치구이 등 해산물 밥상부터, 삼계탕, 비빔밥, 등
+                                    다양한 한식메뉴가 정갈하게 차려집니다.</p>
+                            </div>
+                            <a href="./GetTourDetailCtrlF.html#page2" class="button ">자세히 보기</a>
+                        </article>
+                    </div>
+
+                    <div class="tile is-3" style="box-sizing:border-box;">
+                        <article class="tile is-child is-one-third notification"
+                            style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+                            <p class="title">르 쉬느아 (Le Chinois)</p>
+                            <p class="subtitle"><span>음식</span></p>
+                            <figure class="image is-4by3">
+                                <img src="./img/6food/food3.jpg" alt="르 쉬느아 (Le Chinois)">
+                            </figure>
+                            <div class="content" style="margin:10px;">
+                                <p class="item_com">중국 광둥의 현지 셰프가 선보이는 정통과 품격이 살아있는 광둥식 요리를 만나보자.
+                                    특별한 가족 외식에 잘 어울리는 메뉴인 북경오리부터 육즙과 풍미 가득한 샤오롱바오와 다채로운 딤섬까지,
+                                    제주에서 맛볼 수 없었던 품격 있는 중식을 선보이며 도민에게 사랑받는 레스토랑으로 거듭나고 있다.</p>
+                            </div>
+                            <a href="./GetTourDetailCtrlF.html#page3" class="button ">자세히 보기</a>
+                        </article>
+                    </div>
+
+                    <div class="tile is-3" style="box-sizing:border-box;">
+                        <article class="tile is-child is-one-third notification"
+                            style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+                            <p class="title">몽상드애월 (몽상)</p>
+                            <p class="subtitle"><span>음식</span></p>
+                            <figure class="image is-4by3">
+                                <img src="./img/6food/food4.jpg" alt="몽상드애월 (몽상)">
+                            </figure>
+                            <div class="content" style="margin:10px;">
+                                <p class="item_com">젊은이들에게는 SNS인증샷을 찍는 곳으로 유명해서 좋은 자리를 차지하기가 쉽지 않다.
+                                    주차공간이 협소한 편이어서 공용주차장을 이용하고 해안가로 걸어 이동하는 것이 좋다. 5천원대부터 시작하는 커피 메뉴, 디저트류가 준비되어있다.</p>
+                            </div>
+                            <a href="./GetTourDetailCtrlF.html#page4" class="button ">자세히 보기</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="./GetTourCateListCtrlcateF.html" class="button ">전체 목록</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>제주관광공사</strong>
+                (63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터 / 제주관광정보센터 TEL : (064)740-6000 / FAX : (064)740-6090~1<br>
+
+                COPYRIGHT ⓒ JEJU TOURISM ORGANIZATION. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

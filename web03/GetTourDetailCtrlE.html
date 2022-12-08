@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="detail.css">
+</head>
+
+<body>
+    <div id="nav-group">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+                <div class="navbar-brand">
+                    <a class="navbar-item" id="logo" href="./index.html"> <img src="./img/logo3.png" alt="메인로고"> </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start" id="gnb">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateA.html" class="navbar-link"> 관광 </a>
+                            <div class="navbar-dropdown cate" id="cate01"><a href="GetTourDetailCtrlA.html#page1">사려니숲길</a><a
+                                    href="./GetTourDetailCtrlA.html#page2">성산일출봉</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateB.html" class="navbar-link cate"> 체험 </a>
+                            <div class="navbar-dropdown cate" id="cate02"><a href="./GetTourDetailCtrlB.html#page1">감귤체험농장</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateC.html" class="navbar-link cate"> 행사 </a>
+                            <div class="navbar-dropdown cate" id="cate03"><a href="./GetTourDetailCtrlC.html#page1">빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</a><a
+                                    href="./GetTourDetailCtrlC.html#page2">제주민속촌 몬딱 놀당갑 SHOW</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateD.html" class="navbar-link cate"> 축제 </a>
+                            <div class="navbar-dropdown cate" id="cate04"><a href="./GetTourDetailCtrlD.html#page1">최남단 모슬포 방어축제</a><a
+                                    href="./GetTourDetailCtrlD.html#page2">휴애리 동백축제</a><a href="./GetTourDetailCtrlD.html#page3">달과 별이 내려앉은 신산
+                                    빛의거리</a><a href="./GetTourDetailCtrlD.html#page4">마노르블랑 핑크뮬리축제</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateE.html" class="navbar-link cate"> 숙박 </a>
+                            <div class="navbar-dropdown cate" id="cate05"><a href="./GetTourDetailCtrlE.html#page1">나미송 머무는 곳</a><a
+                                    href="./GetTourDetailCtrlE.html#page2">롯데호텔 제주</a><a href="./GetTourDetailCtrlE.html#page3">신라호텔제주</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateF.html" class="navbar-link cate"> 음식 </a>
+                            <div class="navbar-dropdown cate" id="cate06"><a href="./GetTourDetailCtrlF.html#page1">명진전복</a><a
+                                    href="./GetTourDetailCtrlF.html#page2">濟州膳제주선</a><a href="./GetTourDetailCtrlF.html#page3">르 쉬느아 (Le Chinois)</a><a
+                                    href="./GetTourDetailCtrlF.html#page4">몽상드애월 (몽상)</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateG.html" class="navbar-link cate"> 쇼핑 </a>
+                            <div class="navbar-dropdown cate" id="cate07"><a href="./GetTourDetailCtrlG.html#page1">서귀포매일올레시장</a><a
+                                    href="./GetTourDetailCtrlG.html#page2">제주관광공사 중문면세점</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable single">
+                            <a class="navbar-link"> 관광안내 </a>
+                            <div class="navbar-dropdown single">
+                                <a class="navbar-item" href="GetNoticeListCtrl.html"> 공지사항 </a>
+                            </div>
+                        </div>                    
+                    </div>
+                    <div class="navbar-end" id="tnb">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="agree.html" class="button ">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a href="login.html" class="button "> Log in </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="content" id="page1">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateE.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateE.html">
+                        <span>숙박</span></a>
+                </li>
+                <li class="is-active">
+                    <a href="#" aria-current="page">나미송 머무는 곳</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/5Accommodation/Accommodation1.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td>
+                                <span>숙박</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>E0009</p> <input type="hidden" name="tourno" id="tourno" value="E0009" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>나미송 머무는 곳</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>애월읍 시인의 마을에 위치한 나미송 머무는 곳 민박은 요즘 찾아보기 힘든 '진짜' 민박집이다.
+                                    일찍이 제주도로 내려온 주인장이 가꿔온 삶의 터전으로 여행객들에게 관광이 아닌 여행의 길라잡이가 되어 조용하고 편히 쉴 수 있는 공간을 빌려준다.
+                                    한밤의 풀벌레 소리와 하늘을 수놓은 듯한 별밤은 오늘만큼 삶의 무거운 짐을 내려놓기를 권한다.
+                                    특히 제주시에서 탄소없는 제주시의 일환으로 선정한 '곱들락허게 잘 가꾼 집'에도 선정될 정도로 아기자기하고 아름답게 꾸며진 집과 정원은 보는 것만으로도 힐링이 된다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>나미송에서 여행자들이 머무는 곳은 누리채로 2층 독채이다. 기본적으로 1층과 2층은 따로 예약을 받고 있다.
+                                    1층은 방과 화장실이 2개씩, 그리고 주방이 갖춰져 있다. 2층은 원룸 구조로 간이 주방과 욕실을 갖추고 있다.
+                                    평소에는 2층으로 향하는 계단이 외부로 분리되어 있지만, 1층과 2층을 함께 예약하면 내부에서 이동할 수 있다.
+                                    주변 관광지로는 렛츠런파크, 항몽 유적지, 한라수목원 등이 있으며 제주 국제공항으로부터 승용차로 약 20분이 소요된다.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11514.63505181873!2d126.3888601223134!3d33.40566718281317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350cf7e3b2317fa7%3A0x3638395719da7cdb!2z64KY66-47IahICjrqLjrrLTripTqs7Mp!5e0!3m2!1sko!2skr!4v1669347315683!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="content" id="page2">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateE.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateE.html"><span>숙박</span></a>
+                </li>
+                <li class="is-active">
+                    <a href="#" aria-current="page">롯데호텔 제주</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/5Accommodation/Accommodation2.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td>
+                                <span>숙박</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>E0021</p> <input type="hidden" name="tourno" id="tourno" value="E0021" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>롯데호텔 제주</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>푸른 제주바다와 하늘이 맞닿은 곳에 위치한 롯데호텔 제주는 천국 같은 휴식과 여행의 즐거움을 동시에 누릴 수 있는 대한민국 대표 호텔이다.
+                                    총 500개의 객실 수와 제주의 따뜻한 바다를 닮은 사계절 온수풀 ‘해온(海溫)’, 멀티 놀이공간 ‘플레이토피아’, 헬로키티 캐릭터 룸과 풀빌라 스위트 룸, 연회장을 비롯해 미식 여행의 진수를 선사할 레스토랑까지 다채로운
+                                    시설들 보유하고 있다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>2020년 6월 신규 오픈한 '더 캔버스'는 제주 최대 규모 올데이 다이닝 레스토랑으로 전세계 각국의 풍미와 향토음식을 즐길 수 있다. 600여평의 공간에 420석의 규모, 5개의 별실을 갖췄으며, 푸른 바다가 어우러진 오션
+                                    뷰를 자랑한다.
+                                    특히나 '팜 투 테이블(Farm to table)’을 테마로 신선한 제주산 제철 식재료만을 엄선해 10개월에 걸쳐 개발한 시그니처 메뉴와 어린이를 위한 키즈스테이션으로 차별화된 다이닝을 경험할 수 있다.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.689127353009!2d126.40841174907882!3d33.24844678073809!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c5ac668e0117f%3A0x1d431448fd0dc5c1!2z66Gv642w7Zi47YWUIOygnOyjvA!5e0!3m2!1sko!2skr!4v1669347517728!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="content" id="page3">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateE.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateE.html">
+                        <span>숙박</span>
+                    </a>
+                </li>
+                <li class="is-active">
+                    <a href="#" aria-current="page">신라호텔제주</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/5Accommodation/Accommodation3.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>22</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td>
+                                <span>숙박</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>E0022</p> <input type="hidden" name="tourno" id="tourno" value="E0022" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>신라호텔제주</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>중문관광단지에 위치한 제주 신라호텔은 90년 개관 이후 이국적인 분위기와 최고급 시설로 다양한 국제행사와 세계 국가 수반을 비롯한 많은 VIP들이 거쳐가며 국제적 명성을 쌓아온 리조트 호텔이다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>신라호텔은 사계절 체재형 리조트로서 레저 전문 직원인 G.A.O, 여행 전반 서비스를 책임지는 T.P.O 등 소프트웨어 적인 부분뿐만 아니라 문라이트 스위밍, 글램핑, 와이너리 투어 등 다양한 프로그램을 운영하고 있다. 총
+                                    429개의 객실과 6개의 식당과 바, 8개의 연회장, 카지노, 스파, 피트니스센터를 부대시설로 갖추고 있다.
+                                    제주국제공항으로부터 약 50분 정도의 거리에 위치했다. 주변 관광지로는 여미지 식물원, 테디베어박물관, 주상절리, 천지연폭포, 제주 컨텐션 센터 등이 있다.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.7230528786013!2d126.40592204907868!3d33.24755818073838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c5acf60a78955%3A0x9a7754729d339e2!2z7KCc7KO87Iug65287Zi47YWU!5e0!3m2!1sko!2skr!4v1669347888958!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="buttons">
+        <a href="GetTourCateListCtrlcateE.html" class="button">전체 목록</a>
+    </div>
+    <footer class="footer">
+        <div class="has-text-centered">
+            <p>
+				<strong>제주관광공사</strong>
+				(63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터 / 제주관광정보센터 TEL : (064)740-6000 / FAX : (064)740-6090~1<br>
+
+				COPYRIGHT ⓒ JEJU TOURISM ORGANIZATION. ALL RIGHTS RESERVED.
+			</p>
+        </div>
+    </footer>
+</body>
+
+</html>

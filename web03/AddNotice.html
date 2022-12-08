@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <div id="nav-group">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+                <div class="navbar-brand">
+                    <a class="navbar-item" id="logo" href="./index.html"> <img src="./img/logo3.png" alt="메인로고"> </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start" id="gnb">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateA.html" class="navbar-link"> 관광 </a>
+                            <div class="navbar-dropdown cate" id="cate01"><a href="GetTourDetailCtrlA.html#page1">사려니숲길</a><a
+                                    href="./GetTourDetailCtrlA.html#page2">성산일출봉</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateB.html" class="navbar-link cate"> 체험 </a>
+                            <div class="navbar-dropdown cate" id="cate02"><a href="./GetTourDetailCtrlB.html#page1">감귤체험농장</a><a
+                                    href="./GetTourDetailCtrlB.html#page2">슬리핑라이언</a></div>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="GetTourCateListCtrlcateC.html" class="navbar-link cate"> 행사 </a>
+                        <div class="navbar-dropdown cate" id="cate03"><a href="./GetTourDetailCtrlC.html#page1">빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</a><a
+                                href="./GetTourDetailCtrlC.html#page2">제주민속촌 몬딱 놀당갑 SHOW</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="GetTourCateListCtrlcateD.html" class="navbar-link cate"> 축제 </a>
+                        <div class="navbar-dropdown cate" id="cate04"><a href="./GetTourDetailCtrlD.html#page1">최남단 모슬포 방어축제</a><a
+                                href="./GetTourDetailCtrlD.html#page2">휴애리 동백축제</a><a href="./GetTourDetailCtrlD.html#page3">달과 별이 내려앉은 신산
+                                빛의거리</a><a href="./GetTourDetailCtrlD.html#page4">마노르블랑 핑크뮬리축제</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="GetTourCateListCtrlcateE.html" class="navbar-link cate"> 숙박 </a>
+                        <div class="navbar-dropdown cate" id="cate05"><a href="./GetTourDetailCtrlE.html#page1">나미송 머무는 곳</a><a
+                                href="./GetTourDetailCtrlE.html#page2">롯데호텔 제주</a><a href="./GetTourDetailCtrlE.html#page3">신라호텔제주</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="GetTourCateListCtrlcateF.html" class="navbar-link cate"> 음식 </a>
+                        <div class="navbar-dropdown cate" id="cate06"><a href="./GetTourDetailCtrlF.html#page1">명진전복</a><a
+                                href="./GetTourDetailCtrlF.html#page2">濟州膳제주선</a><a href="./GetTourDetailCtrlF.html#page3">르 쉬느아 (Le Chinois)</a><a
+                                href="./GetTourDetailCtrlF.html#page4">몽상드애월 (몽상)</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a href="GetTourCateListCtrlcateG.html" class="navbar-link cate"> 쇼핑 </a>
+                        <div class="navbar-dropdown cate" id="cate07"><a href="./GetTourDetailCtrlG.html#page1">서귀포매일올레시장</a><a
+                                href="./GetTourDetailCtrlG.html#page2">제주관광공사 중문면세점</a></div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable single">
+                        <a class="navbar-link"> 관광안내 </a>
+                        <div class="navbar-dropdown single">
+                            <a class="navbar-item" href="GetNoticeListCtrl.html"> 공지사항 </a>
+                        </div>
+                    </div>
+                    <div class="navbar-end" id="tnb">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="agree.html" class="button ">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a href="login.html" class="button "> Log in </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">글 등록하기</h1>
+            <form action="/pro03/AddNoticeCtrl.do" method="post">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th><label for="title">제목</label></th>
+                            <td><input type="text" class="input" maxlength="120" name="title" id="title" placeholder="제목 입력" required /></td>
+                        </tr>
+                        <tr>
+                            <th><label for="content">내용</label></th>
+                            <td><textarea rows="8" cols="100" name="content" id="content" class="textarea" required></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="buttons">
+                    <a href="./GetNoticeListCtrl.html" class="button ">등록</a>
+                    <a href="./GetNoticeListCtrl.html" class="button ">취소</a>
+                    <a href="./GetNoticeListCtrl.html" class="button ">목록</a>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>제주관광공사</strong>
+                (63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터 / 제주관광정보센터 TEL : (064)740-6000 / FAX : (064)740-6090~1<br>
+
+                COPYRIGHT ⓒ JEJU TOURISM ORGANIZATION. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
+

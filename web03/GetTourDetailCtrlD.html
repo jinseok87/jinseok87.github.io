@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="detail.css">
+</head>
+
+<body>
+    <div id="nav-group">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+                <div class="navbar-brand">
+                    <a class="navbar-item" id="logo" href="./index.html"> <img src="./img/logo3.png" alt="메인로고"> </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start" id="gnb">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateA.html" class="navbar-link"> 관광 </a>
+                            <div class="navbar-dropdown cate" id="cate01"><a href="GetTourDetailCtrlA.html#page1">사려니숲길</a><a
+                                    href="./GetTourDetailCtrlA.html#page2">성산일출봉</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateB.html" class="navbar-link cate"> 체험 </a>
+                            <div class="navbar-dropdown cate" id="cate02"><a href="./GetTourDetailCtrlB.html#page1">감귤체험농장</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateC.html" class="navbar-link cate"> 행사 </a>
+                            <div class="navbar-dropdown cate" id="cate03"><a href="./GetTourDetailCtrlC.html#page1">빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</a><a
+                                    href="./GetTourDetailCtrlC.html#page2">제주민속촌 몬딱 놀당갑 SHOW</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateD.html" class="navbar-link cate"> 축제 </a>
+                            <div class="navbar-dropdown cate" id="cate04"><a href="./GetTourDetailCtrlD.html#page1">최남단 모슬포 방어축제</a><a
+                                    href="./GetTourDetailCtrlD.html#page2">휴애리 동백축제</a><a href="./GetTourDetailCtrlD.html#page3">달과 별이 내려앉은 신산
+                                    빛의거리</a><a href="./GetTourDetailCtrlD.html#page4">마노르블랑 핑크뮬리축제</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateE.html" class="navbar-link cate"> 숙박 </a>
+                            <div class="navbar-dropdown cate" id="cate05"><a href="./GetTourDetailCtrlE.html#page1">나미송 머무는 곳</a><a
+                                    href="./GetTourDetailCtrlE.html#page2">롯데호텔 제주</a><a href="./GetTourDetailCtrlE.html#page3">신라호텔제주</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateF.html" class="navbar-link cate"> 음식 </a>
+                            <div class="navbar-dropdown cate" id="cate06"><a href="./GetTourDetailCtrlF.html#page1">명진전복</a><a
+                                    href="./GetTourDetailCtrlF.html#page2">濟州膳제주선</a><a href="./GetTourDetailCtrlF.html#page3">르 쉬느아 (Le Chinois)</a><a
+                                    href="./GetTourDetailCtrlF.html#page4">몽상드애월 (몽상)</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateG.html" class="navbar-link cate"> 쇼핑 </a>
+                            <div class="navbar-dropdown cate" id="cate07"><a href="./GetTourDetailCtrlG.html#page1">서귀포매일올레시장</a><a
+                                    href="./GetTourDetailCtrlG.html#page2">제주관광공사 중문면세점</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable single">
+                            <a class="navbar-link"> 관광안내 </a>
+                            <div class="navbar-dropdown single">
+                                <a class="navbar-item" href="GetNoticeListCtrl.html"> 공지사항 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-end" id="tnb">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="agree.html" class="button ">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a href="login.html" class="button "> Log in </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content" id="page1">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateD.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateD.html">
+                    </a>
+                </li>
+                <li class="is-active">
+                    <a href="./GetTourDetailCtrlD.html#page1" aria-current="page">최남단 모슬포 방어축제</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/4Festival3/Festival1.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>D0008</p> <input type="hidden" name="tourno" id="tourno" value="D0008" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>최남단 모슬포 방어축제</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>□ 기간 : 2022.11.26(월)~12.25(일)
+                                    □ 장소 : 모슬포항 일원
+                                    □ 주요행사 : 방어맨손잡기 체험, 어린이 방어 맨손으로 잡기, 어시장 경매, 가두리 방어 낚시 체험, 소라잡기 및 불턱 체험, 아빠와 함께하는 릴낚시 체험 등</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>방어축제는 모슬포항에서 열리는 제주의 대표적인 해양문화축제다.
+                                    방어는 가을이 되면 남쪽으로 회유하는 성질이 있는데 그 마지막 월동지가 마라도로, 마라도 인근의 자리돔을 먹으며 겨울을 보내며, 그 주산지가 모슬포항이 된다.
+                                    방어축제 기간의 모슬포는 그 어느때보다 떠들썩 하다. 매년 15~20만명의 관람객이 찾고 있으니, 제주의 대표축제 중 하나로 자리매김 한 셈이다. 통통한 방어를 눈으로 손으로 입으로 체험하고, 가을의 거친파도와 싸우며
+                                    방어를 잡는 어민들의 모습도 만나볼 수 있다. 주변에는 산방산과 송악산 등 자연자원과 대정향교, 추사관 등 역사문화 유적이 있어 다채로운 테마의 여행을 기획하기 좋다.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26703.35162207578!2d126.23302658910752!3d33.21622092887001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c694886ba4799%3A0xcd7cc8ee4ba8c843!2z66qo7Iqs7Y-sIOuwqeyWtOy2leygnOydmCDqsbDrpqw!5e0!3m2!1sko!2skr!4v1669345853409!5m2!1sko!2skr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+            </div>
+        </section>
+    </div>
+
+    <div class="content" id="page2">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateD.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateD.html">
+                    </a>
+                </li>
+                <li class="is-active">
+                    <a href="./GetTourDetailCtrlD.html#page2" aria-current="page">휴애리 동백축제</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/4Festival3/Festival2.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>D0016</p> <input type="hidden" name="tourno" id="tourno" value="D0016" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>휴애리 동백축제</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>2022 휴애리 동백축제
+                                    2022 휴애리 동백축제는 서귀포시 남원읍 신례리에 위치한 휴애리의 대표 겨울축제이다.
+                                    이번 휴애리 동백축제에는 동백올레길, 동백온실, 동백정원 등 정성스럽게 키운 동백꽃을 공원 곳곳에서 감상할 수 있다.
+                                    제주 겨울을 대표하는 동백꽃이 가득한 휴애리 동백축제는 웨딩스냅, 우정스냅 등 인생사진 찍기 좋은 장소로 인정받은 겨울 제주여행의 필수 코스이다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>■ 휴애리 동백축제 일정 : 2022. 11. 14(월) ~ 2023. 1. 31(화)
+                                    ■ 개최장소 : 제주도 서귀포시 남원읍 신례동로 256(휴애리 자연생활공원)
+                                    ■ 주최 : 휴애리 자연생활공원
+                                    ■ 체험프로그램 : 흑돼지야놀자(11시~17시, 두시간에 한번), 동물먹이주기체험(산토끼, 돼지, 염소, 말 등)
+                                    ■ 문의 : 064)732-2114</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.3845392384437!2d126.6316051152622!3d33.30876096398885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350daa99baa39eb5%3A0xa514f1b70f3094a6!2z7Zy07JWg66asIOyekOyXsOyDne2ZnOqzteybkA!5e0!3m2!1sko!2skr!4v1669345931699!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+    </div>
+
+    <div class="content" id="page3">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateD.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateD.html">
+                    </a>
+                </li>
+                <li class="is-active">
+                    <a href="./GetTourDetailCtrlD.html#page3" aria-current="page">달과 별이 내려앉은 신산 빛의거리</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/4Festival3/Festival3.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>D0017</p> <input type="hidden" name="tourno" id="tourno" value="D0017" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>달과 별이 내려앉은 신산 빛의거리</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>전시·공연·미디어아트 콘텐츠 체험 등 다양한 볼거리와 즐길거리 ‘풍성’ . 제주 도심 속 휴식공간인 신산공원에서 가을밤 아름다운 빛이 켜진다.
+                                    제주특별자치도와 제주관광공사(사장 고은숙)는 오는 10월 23일부터 11월 28일까지 37일간 「달과 별이 내려앉은 신산 빛의거리」를 개최한다고 밝혔다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>매년 신산공원 일대 야간경관 사업으로 추진되는 이 행사는 문예회관 사거리에서 자연사박물관까지 도로 조명과 공원 북쪽 메인행사장(구 호남석재사거리 공원 부근)에서 진행된다. 행사장 구석구석 △ 빛나는 공간, △ 빛나는
+                                    제주콘텐츠, △ 작품이 빛나는 전시, △ 빛나는 부대행사, △ 빛나는 이벤트 등 다양한 야간 볼거리와 즐길거리가 구성되어 있다.
+                                    아름다운 조명과 포토존들이 있는 △ 빛나는 공간에서는 달과 별의 공간, 사랑의 공간, 빛의 터널, 빛의 놀이터 등이 있으며 재미가 빛나는 무대에서는 애니메이션 영화관(매주 금), 숲 음악회(매주 토), 지질강연(매주 일)
+                                    등 부대행사가 진행될 예정이다.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358242.91793376463!2d126.62053270742535!3d33.59188537905817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350d1347056f319d%3A0x8161e7a18993b287!2z7KCc7KO8LCDruZvsnZgg67KZ7LukIDR0aCDsoITsi5wgT1BFTg!5e0!3m2!1sko!2skr!4v1669346355213!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+    </div>
+
+    <div class="content" id="page4">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="/index.html">Home</a>
+                </li>
+                <li>
+                    <a href="/GetTourDetailCtrlD.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourDetailCtrlD.html"></a>
+                </li>
+                <li class="is-active">
+                    <a href="./GetTourDetailCtrlD.html#page4" aria-current="page">마노르블랑 핑크뮬리축제</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/4Festival3/Festival4.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>18</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>D0018</p> <input type="hidden" name="tourno" id="tourno" value="D0018" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>마노르블랑 핑크뮬리축제</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>마노르블랑 핑크뮬리축제
+                                    기간 : 2022년 9월 13일(화) ~ 2021년 11월 30(수)
+                                    시간 : 09:00 ~ 19:00
+                                    장소 : 마노르블랑(제주특별자치도 서귀포시 일주서로2100번길 46)
+                                    문의 : 064-794-0999
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>한민국 핑크뮬리 성지! 마노르블랑에서 핑크뮬리축제의 향연이 시작된다.
+                                    마노르블랑은 서귀포시에 위치한 가든 카페이다. 이곳은 작년에 이어 올해에도 핑크뮬리축제를 맞이하고 있다. 축제기간은 9월부터 11월까지이다. 우리나라 최남단에 위치하고 있으며 핑크뮬리가 우리나라에서 가장 빨리 개화중이다.
+                                    9월에는 사랑과 정성으로 가꾸어진 핑크뮬리를 마노르블랑에서 볼 수 있다. 또한 산방산과 송악산 사이로 형제섬과 사계앞바다가 보이는 환상적인 조망은 마노르블랑에서만 볼 수 있다.
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <iframe class="map" class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3336.4676568746377!2d126.292462115261!3d33.254247166805534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350c42e863ef3a31%3A0x9b63b04adb2041e5!2z66eI64W466W067iU656R!5e0!3m2!1sko!2skr!4v1669346613695!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="content" id="page5">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./GetTourDetailCtrlD.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourDetailCtrlD.html#page5"></a>
+                </li>
+                <li class="is-active">
+                    <a href="./GetTourDetailCtrlD.html#page5" aria-current="page">2022 제주 에코뮤직페스티벌</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/4Festival3/Festival5.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>20</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>D0020</p> <input type="hidden" name="tourno" id="tourno" value="D0020" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>2022 제주 에코뮤직페스티벌</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>제주의 아름다운 자연을 풍경으로 다양한 아티스트들의 공연이 펼쳐지는 ‘2022 제주 에코뮤직 페스티벌’이 찾아온다.
+
+                                    제주관광공사는 오는 11월 19일(토) 1일간 애월읍 봉성리 소재의 새별오름에서 제주 에코뮤직페스티벌을 개최하여 도민과 관광객을 대상으로 문화 관광콘텐츠를 제공한다.
+                                    남녀노소 누구나 즐길 수 있는 다양한 장르의 아티스트들이 참여할 예정이며, ‘studio jejumbc’ 유튜브 채널을 통해 생중계도 진행된다. 또한 행사장 내 다양한 분야의 플리마켓과 푸드트럭도 함께 마련될 예정이다.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>■ 행 사 명 : 2022 제주 에코뮤직페스티벌
+                                    ■ 주최/주관 : 제주특별자치도/제주관광공사, 제주MBC
+                                    ■ 일 정 : 2022. 11. 19(토), 13:00~19:00
+                                    ※ 11:00 부터 입장 가능
+                                    ■ 장 소 : 새별오름(제주시 애월읍 봉성리 4554-12/새별오름 주차장7)
+                                    ■ 주요내용 : 공연 개최, 플리마켓 및 푸드트럭 운영
+                                    ■ 출연진 : 문빈&산하(ASTRO), 수퍼비&호미들, 박혜원(HYNN), 김완선 밴드, 억스(AUX), 사우스카니발, 소리께떼
+                                    ■ 유튜브 생중계 : STUDIO JEJUMBC_스튜디오제주MBC</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+        </section>
+        <iframe class="map" class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13253.061058227862!2d126.53690147868659!3d33.484461641817624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350cfcbea52acdb7%3A0xab0a71b3050fed09!2z7KCc7KO8666k7KeB!5e0!3m2!1sko!2skr!4v1669346699531!5m2!1sko!2skr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    
+    <div class="buttons">
+        <a href="GetTourCateListCtrlcateD.html" class="button">전체 목록</a>
+    </div>
+    <footer class="footer">
+        <div class="has-text-centered">
+            <p>
+				<strong>제주관광공사</strong>
+				(63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터 / 제주관광정보센터 TEL : (064)740-6000 / FAX : (064)740-6090~1<br>
+
+				COPYRIGHT ⓒ JEJU TOURISM ORGANIZATION. ALL RIGHTS RESERVED.
+			</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

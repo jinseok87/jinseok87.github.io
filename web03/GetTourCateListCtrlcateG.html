@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+</head>
+
+<body>
+    <div id="nav-group">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+                <div class="navbar-brand">
+                    <a class="navbar-item" id="logo" href="./index.html"> <img src="./img/logo3.png" alt="메인로고"> </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start" id="gnb">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateA.html" class="navbar-link"> 관광 </a>
+                            <div class="navbar-dropdown cate" id="cate01"><a href="GetTourDetailCtrlA.html#page1">사려니숲길</a><a
+                                    href="./GetTourDetailCtrlA.html#page2">성산일출봉</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateB.html" class="navbar-link cate"> 체험 </a>
+                            <div class="navbar-dropdown cate" id="cate02"><a href="./GetTourDetailCtrlB.html#page1">감귤체험농장</a><a href="./GetTourDetailCtrlB.html#page2">슬리핑라이언</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateC.html" class="navbar-link cate"> 행사 </a>
+                            <div class="navbar-dropdown cate" id="cate03"><a href="./GetTourDetailCtrlC.html#page1">빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</a><a
+                                    href="./GetTourDetailCtrlC.html#page2">제주민속촌 몬딱 놀당갑 SHOW</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateD.html" class="navbar-link cate"> 축제 </a>
+                            <div class="navbar-dropdown cate" id="cate04"><a href="./GetTourDetailCtrlD.html#page1">최남단 모슬포 방어축제</a><a
+                                    href="./GetTourDetailCtrlD.html#page2">휴애리 동백축제</a><a href="./GetTourDetailCtrlD.html#page3">달과 별이 내려앉은 신산
+                                    빛의거리</a><a href="./GetTourDetailCtrlD.html#page4">마노르블랑 핑크뮬리축제</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateE.html" class="navbar-link cate"> 숙박 </a>
+                            <div class="navbar-dropdown cate" id="cate05"><a href="./GetTourDetailCtrlE.html#page1">나미송 머무는 곳</a><a
+                                    href="./GetTourDetailCtrlE.html#page2">롯데호텔 제주</a><a href="./GetTourDetailCtrlE.html#page3">신라호텔제주</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateF.html" class="navbar-link cate"> 음식 </a>
+                            <div class="navbar-dropdown cate" id="cate06"><a href="./GetTourDetailCtrlF.html#page1">명진전복</a><a
+                                    href="./GetTourDetailCtrlF.html#page2">濟州膳제주선</a><a href="./GetTourDetailCtrlF.html#page3">르 쉬느아 (Le Chinois)</a><a
+                                    href="./GetTourDetailCtrlF.html#page4">몽상드애월 (몽상)</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateG.html" class="navbar-link cate"> 쇼핑 </a>
+                            <div class="navbar-dropdown cate" id="cate07"><a href="./GetTourDetailCtrlG.html#page1">서귀포매일올레시장</a><a
+                                    href="./GetTourDetailCtrlG.html#page2">제주관광공사 중문면세점</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable single">
+                            <a class="navbar-link"> 관광안내 </a>
+                            <div class="navbar-dropdown single">
+                                <a class="navbar-item" href="GetNoticeListCtrl.html"> 공지사항 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-end" id="tnb">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="agree.html" class="button ">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a href="login.html" class="button "> Log in </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom:2px solid #ddd; padding-bottom:8px; min-height:48px; line-height:48px;">
+        <ul style="float:right;">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./GetTourDetailCtrlF.html">전체 장소</a></li>
+            <li class="is-active"><a href="#" aria-current="page"><span>쇼핑</span></a></li>
+        </ul>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">장소 상세보기</h1>
+            <div id="con">
+                <div class="tile is-ancestor columns" style="padding-bottom:40px;">
+                    <div class="tile is-3" style="box-sizing:border-box;">
+                        <article class="tile is-child is-one-third notification"
+                            style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+                            <p class="title">서귀포매일올레시장</p>
+                            <p class="subtitle"><span>쇼핑</span></p>
+                            <figure class="image is-4by3">
+                                <img src="./img/7shopping/shopping1.jpg" alt="서귀포매일올레시장">
+                            </figure>
+                            <div class="content" style="margin:10px;">
+                                <p class="item_com">365일 문전성시를 이루는 서귀포시 대표 상설시장
+
+                                    ‘서귀포매일올레시장’은 서귀포시 중심에 자리한 전통시장이자, 제주 여행에서 빼놓을 수 없는 필수 코스로 자리매김한 시장이다. 
+                                    서귀포시 내에서 가장 크고 오래된 상설시장으로 365일 제주도민들과 여행객들로 문전성시를 이루며
+                                    경제 활성화에도 큰 역할을 하는 곳이다.
+
+                                    제주의 특산물인 오메기떡, 감귤, 한라봉, 옥돔, 은갈치, 흑돼지 등을 만나볼 수 있으며, 그 외에도 다양한 볼거리와 먹거리가 있는
+                                     전통시장으로 한 번 들어서게 되면 시간 가는 줄 모르고 구경하게 된다.
+                                </p>
+                            </div>
+                            <a href="./GetTourDetailCtrlG.html#page1" class="button ">자세히 보기</a>
+                        </article>
+                    </div>
+
+                    <div class="tile is-3" style="box-sizing:border-box;">
+                        <article class="tile is-child is-one-third notification"
+                            style="background-color:transparent; border:1px solid #eee; margin-right:10px!important;">
+                            <p class="title">제주관광공사 중문면세점</p>
+                            <p class="subtitle"><span>쇼핑</span></p>
+                            <figure class="image is-4by3">
+                                <img src="./img/7shopping/shopping2.jpg" alt="제주관광공사 중문면세점">
+                            </figure>
+                            <div class="content" style="margin:10px;">
+                                <p class="item_com">- 이용안내 : 중문면세점에서 구매한 상품은 제주에서 국내 다른 지역으로 출도 시, 
+                                    제주국제공항 및 제주항 내에 위치한 인도장에서 수령하면 된다.
+                                    - 이용대상 : 제주도에서 국내 다른 지역으로 이동하는 내국인(제주도민 포함) 및 외국인 모두 연령제한 없음.
+                                    - 구매한도 : 연간 이용횟수: 6회 / 1회 구매한도: 미화 600달러($600)
+                                    * 1리터 이하 주류와 담배 20개비 기준 1보루는 별도 면세 물품으로 지정돼 면세품 구매 한도에서 제외됨
+                                    -> 600$ 면세품 구매 + 담배 1보루, 주류 1리터 이하 추가 구매 가능
+                                    * 물품구매한도는 제주관광공사의 모든 면세점 및 공항에 위치한 JDC면세점과 통합관리됨
+                                    제주관광공사 면세점은 국내 최초 내국인 면세점으로서 제주를 대표하는 쇼핑관광 인프라로 국내 항공ㆍ선박을 통해 누구나 이용 가능하다.</p>
+                            </div>
+                            <a href="./GetTourDetailCtrlG.html#page2" class="button ">자세히 보기</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="./GetTourCateListCtrlcateG.html" class="button ">전체 목록</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+				<strong>제주관광공사</strong>
+				(63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터 / 제주관광정보센터 TEL : (064)740-6000 / FAX : (064)740-6090~1<br>
+
+				COPYRIGHT ⓒ JEJU TOURISM ORGANIZATION. ALL RIGHTS RESERVED.
+			</p>
+        </div>
+    </footer>
+</body>
+
+</html>

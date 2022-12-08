@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>장소 상세보기</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="detail.css">
+</head>
+
+<body>
+    <div id="nav-group">
+        <div class="container">
+            <nav class="navbar" role="navigation" aria-label="main navigation" id="nav">
+                <div class="navbar-brand">
+                    <a class="navbar-item" id="logo" href="./index.html"> <img src="./img/logo3.png" alt="메인로고"> </a>
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="navbarBasicExample" class="navbar-menu">
+                    <div class="navbar-start" id="gnb">
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateA.html" class="navbar-link"> 관광 </a>
+                            <div class="navbar-dropdown cate" id="cate01"><a href="GetTourDetailCtrlA.html#page1">사려니숲길</a><a
+                                    href="./GetTourDetailCtrlA.html#page2">성산일출봉</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateB.html" class="navbar-link cate"> 체험 </a>
+                            <div class="navbar-dropdown cate" id="cate02"><a href="./GetTourDetailCtrlB.html#page1">감귤체험농장</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateC.html" class="navbar-link cate"> 행사 </a>
+                            <div class="navbar-dropdown cate" id="cate03"><a href="./GetTourDetailCtrlC.html#page1">빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</a><a
+                                    href="./GetTourDetailCtrlC.html#page2">제주민속촌 몬딱 놀당갑 SHOW</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateD.html" class="navbar-link cate"> 축제 </a>
+                            <div class="navbar-dropdown cate" id="cate04"><a href="./GetTourDetailCtrlD.html#page1">최남단 모슬포 방어축제</a><a
+                                    href="./GetTourDetailCtrlD.html#page2">휴애리 동백축제</a><a href="./GetTourDetailCtrlD.html#page3">달과 별이 내려앉은 신산
+                                    빛의거리</a><a href="./GetTourDetailCtrlD.html#page4">마노르블랑 핑크뮬리축제</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateE.html" class="navbar-link cate"> 숙박 </a>
+                            <div class="navbar-dropdown cate" id="cate05"><a href="./GetTourDetailCtrlE.html#page1">나미송 머무는 곳</a><a
+                                    href="./GetTourDetailCtrlE.html#page2">롯데호텔 제주</a><a href="./GetTourDetailCtrlE.html#page3">신라호텔제주</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateF.html" class="navbar-link cate"> 음식 </a>
+                            <div class="navbar-dropdown cate" id="cate06"><a href="./GetTourDetailCtrlF.html#page1">명진전복</a><a
+                                    href="./GetTourDetailCtrlF.html#page2">濟州膳제주선</a><a href="./GetTourDetailCtrlF.html#page3">르 쉬느아 (Le Chinois)</a><a
+                                    href="./GetTourDetailCtrlF.html#page4">몽상드애월 (몽상)</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a href="GetTourCateListCtrlcateG.html" class="navbar-link cate"> 쇼핑 </a>
+                            <div class="navbar-dropdown cate" id="cate07"><a href="./GetTourDetailCtrlG.html#page1">서귀포매일올레시장</a><a
+                                    href="./GetTourDetailCtrlG.html#page2">제주관광공사 중문면세점</a></div>
+                        </div>
+                        <div class="navbar-item has-dropdown is-hoverable single">
+                            <a class="navbar-link"> 관광안내 </a>
+                            <div class="navbar-dropdown single">
+                                <a class="navbar-item" href="GetNoticeListCtrl.html"> 공지사항 </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-end" id="tnb">
+                        <div class="navbar-item">
+                            <div class="buttons">
+                                <a href="agree.html" class="button ">
+                                    <strong>Sign up</strong>
+                                </a>
+                                <a href="login.html" class="button "> Log in </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content" id="page1">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li>
+                    <a href="./index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateC.html">전체 장소</a>
+                </li>
+                <li>
+                    <a href="./GetTourCateListCtrlcateC.html">
+                        <span>행사</span>
+                    </a>
+                </li>
+                <li class="is-active">
+                    <a href="./GetTourCateListCtrlcateC.html#page1" aria-current="page">빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/3event/event1.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" /> </td>
+                        </tr>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td>
+                                <span>행사</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>C0007</p> <input type="hidden" name="tourno" id="tourno" value="C0007" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>빛의 벙커 '세잔,프로방스의빛/칸딘스키' 전</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>자세한 소식과 티켓 예매는 공식 홈페이지를 통해 확인 바랍니다.</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>태양이 뜨는 마을, 성산에 숨겨져 있던 벙커가 제주의 색을 고스란히 닮은 빛의 갤러리로 변모했다. 이곳은 국가 기간통신망을 운영하기 위한 해저 광케이블을 관리하던 약 900평 규모의 철근 콘크리트 건물이었다.
+
+                                    사용가치를 다해 잊혀가던 중 프랑스 몰입형 미디어아트 AMIEX를 활용할 수 있는 최적의 장소로 결정됐고, 프랑스 외에 최초로 제주에서 선을 보이게 됐다. 프로젝터를 통해 화려한 레이저 그래픽을 콘크리트 벽에 씌워 새로운
+                                    공간을 연출하는데, 이번 전시는 현대미술의 아버지로 칭송받는 세잔과, 추상미술의 창시자 칸딘스키의 작품들이 벙커 내부를 가득 채운다.</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.3627519766324!2d126.89476093488766!3d33.4398545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350d1347056f319d%3A0x8161e7a18993b287!2z7KCc7KO8LCDruZvsnZgg67KZ7LukIDR0aCDsoITsi5wgT1BFTg!5e0!3m2!1sko!2skr!4v1669341807231!5m2!1sko!2skr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </div>
+
+    <div class="content" id="page2">
+        <nav class="breadcrumb" aria-label="breadcrumbs" style="border-bottom: 2px solid #ddd; padding-bottom: 8px; min-height: 48px; line-height: 48px;">
+            <ul style="float: right;">
+                <li> <a href="./index.html">Home</a> </li>
+                <li> <a href="./GetTourCateListCtrlcateC.html">전체 장소</a> </li>
+                <li> <a href="./GetTourCateListCtrlcateC.html"> <span>행사</span> </a> </li>
+                <li class="is-active"> <a href="#" aria-current="page">제주민속촌 몬딱 놀당갑 SHOW</a> </li>
+            </ul>
+        </nav>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">장소 상세보기</h1>
+                <div id="con">
+                    <table class="table">
+                        <tr>
+                            <td><img src="./img/3event/event2.jpg" class="lazy" onerror="this.style.display='none'" alt="배너" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th style="min-width: 180px;">번호</th>
+                            <td>19</td>
+                        </tr>
+                        <tr>
+                            <th>분류</th>
+                            <td>
+                                <span>행사</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 번호</th>
+                            <td>
+                                <p>C0019</p> <input type="hidden" name="tourno" id="tourno" value="C0019" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소명</th>
+                            <td>제주민속촌 몬딱 놀당갑 SHOW</td>
+                        </tr>
+                        <tr>
+                            <th>장소 주요 설명</th>
+                            <td>
+                                <p>제주민속촌 몬딱 놀당갑 SHOW
+
+                                    친근하고 유쾌한 제주민속촌을 만나 보실 수 있는 “몬딱 놀당갑 SHOW"
+                                    제주민속촌을 방문하는 남녀노소 누구나 재밌게 볼 수 있는 댄스 라이브 퍼포먼스를 시작으로 퓨전 마당극 컨셉의 코믹 뮤지컬, 제주목사 삼추니가 펼쳐진다.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>장소 상세 설명</th>
+                            <td>
+                                <p>■ 행 사 명 : 몬딱 놀당갑 SHOW (부제 : 조선날라리)
+                                    ■ 공연장소 : 제주민속촌 일원
+                                    - 어서옵쇼 : 정문 광장
+                                    - 제주목사 삼추니 : 제주영문
+                                    - 놀자전 : 산촌~어촌 일대 (놀자전은 공연시간 이외시간에 진행합니다)
+                                    ■ 축제일정 : ~2023년 3월(예정)
+                                    ■ 공연시간 : 1회차 10:00 / 2회차 13:00 / 3회차 15:00
+                                    (우천시에는 공연이 취소됩니다)</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3333.8584661739083!2d126.83967931548642!3d33.32251546327715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x350d0934b0268049%3A0x745657a1405f86d!2z7KCc7KO866-87IaN7LSM!5e0!3m2!1sko!2skr!4v1669340780270!5m2!1sko!2skr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </div>
+
+    <div class="buttons">
+        <a href="GetTourCateListCtrlcateC.html" class="button">전체 목록</a>
+    </div>
+    <footer class="footer">
+        <div class="has-text-centered">
+            <p>
+                <strong>제주관광공사</strong>
+                (63122) 제주특별자치도 제주시 선덕로 23(연동) 제주웰컴센터 / 제주관광정보센터 TEL : (064)740-6000 / FAX : (064)740-6090~1<br>
+
+                COPYRIGHT ⓒ JEJU TOURISM ORGANIZATION. ALL RIGHTS RESERVED.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
