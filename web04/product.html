@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인</title>
+    <title>product</title>
     <!-- 헤드 부분 인클루드 -->
 
 
@@ -158,6 +158,16 @@
             width: 25%;
             height: 25%;
         }
+
+        .img-wrap {
+            text-align: center;
+        }
+
+        .txt-wrap {
+            text-align: center;
+            color: #dc000c;
+            font-size: 25px;
+        }
     </style>
 
 </head>
@@ -165,12 +175,6 @@
 <body>
     <header id="header">
         <!-- 헤더 부분 인클루드 -->
-
-
-
-
-
-
 
         <!-- 헤더 내용 기술 -->
         <nav class="top-bar">
@@ -200,6 +204,10 @@
         </nav>
         <!-- End Top Bar -->
 
+
+
+
+
         <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
             <ul class="orbit-container">
                 <button class="orbit-previous" aria-label="previous"><span class="show-for-sr">Previous Slide</span>&#9664;</button>
@@ -223,46 +231,79 @@
         </div>
     </header>
 
-    <div class="content" id="con">
-        <div class="row column text-center">
-            <h2 class="h1">로그인</h2>
-            <hr>
-            <div class="container">
 
-                <form action="/myapp/member/signin.do" method="post" name="loginForm">
-                    <div class="table_form_wrap">
-                        <table class="table_form">
-                            <tbody>
-                                <tr>
-                                    <th><label for="id">아이디</label></th>
-                                    <td><input type="text" name="id" id="id" size="100" class="single100" placeholder="아이디 입력" required>
-                                        <!--  pattern="^[a-z0-9]+$"  -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><label for="pw">비밀번호</label></th>
-                                    <td><input type="password" name="pw" id="pw" class="single100" placeholder="비밀번호 입력" required>
-                                        <!--  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  -->
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2">
-                                        <input type="submit" class="button" value="로그인">
-                                        <input type="reset" class="button" value="취소">
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </form>
-                <script>
-                    function loginFaiure() {
-                        alert("로그인 실패");
-                    }
-                </script>
+    <div class="item-wrap">
+        <a href="#" title="EOS R5" class="itembox">
+            <div class="img-wrap">
+                <img src="//image.kr.canon/pds/product/1619158860902_z0nEi3NQGB.jpg" alt="EOS R5"
+                    onerror="this.src='//image.kr.canon/crop288x163/pds/noimg/noimg.gif'">
             </div>
-        </div>
+            <div class="txt-wrap">
+                <p class="name">EOS R5</p>
+                <p class="desc"></p>
+                <input type="hidden" class="productCd" value="NPAB7100112" />
+                <input type="hidden" class="productCdEnc" value="F721ED857A0424EF20A06DB056371273" />
+                <input type="hidden" class="upCtgId" value="146" />
+            </div>
+
+            <div class="img-wrap">
+                <img src="//image.kr.canon/pds/product/1667361588509_iOyLOcdGgQ.jpg" alt="EOS R6 Mark II"
+                    onerror="this.src='//image.kr.canon/crop288x163/pds/noimg/noimg.gif'">
+            </div>
+            <div class="txt-wrap">
+                <p class="name">EOS R6 Mark II</p>
+                <p class="desc">사진과 영상, 그 프레임을 넘어선 풀프레임</p>
+            </div>
+
+        </a>
+        <a href="#" title="EOS R6" class="itembox">
+            <div class="add-wrap">
+            </div>
+            <div class="spec-wrap">
+            </div>
+            <div class="img-wrap">
+                <img src="//image.kr.canon/pds/product/1594299360222_mSk8r57THd.jpg" alt="EOS R6"
+                    onerror="this.src='//image.kr.canon/crop288x163/pds/noimg/noimg.gif'">
+            </div>
+            <div class="txt-wrap">
+                <p class="name">EOS R6</p>
+                <p class="desc"></p>
+            </div>
+
+        </a>
+        <a href="#" title="EOS R" class="itembox">
+            <div class="add-wrap">
+            </div>
+            <div class="spec-wrap">
+            </div>
+            <div class="img-wrap">
+                <img src="//image.kr.canon/pds/product/1536130002385_ta5VAz1wGk.jpg" alt="EOS R"
+                    onerror="this.src='//image.kr.canon/crop288x163/pds/noimg/noimg.gif'">
+            </div>
+            <div class="txt-wrap">
+                <p class="name">EOS R</p>
+                <p class="desc"></p>
+            </div>
+
+        </a>
+        <a href="#" title="EOS RP" class="itembox">
+            <div class="add-wrap">
+            </div>
+            <div class="spec-wrap">
+            </div>
+            <div class="img-wrap">
+                <img src="//image.kr.canon/pds/product/1566173229664_8xh6XGTv3O.jpg" alt="EOS RP"
+                    onerror="this.src='//image.kr.canon/crop288x163/pds/noimg/noimg.gif'">
+            </div>
+            <div class="txt-wrap">
+                <p class="name">EOS RP</p>
+                <p class="desc"></p>
+            </div>
+
+        </a>
     </div>
+
+
     <footer id="footer" class="footer-nav row expanded collapse">
         <!-- 푸터 부분 인클루드 -->
 

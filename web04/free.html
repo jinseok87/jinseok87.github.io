@@ -5,12 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+    <title>Photo zone</title>
     <!-- 헤드 부분 인클루드 -->
-
-
-
-
 
     <!-- <script src="include/jquery.js"></script>
 <script src="include/foundation.js"></script>
@@ -40,6 +36,10 @@
         });
     </script>
     <style>
+        .orbit-container {
+            text-align: center;
+        }
+
         ul {
             list-style: none;
         }
@@ -154,19 +154,38 @@
             width: 25%;
             height: 25%;
         }
-        .page{
-            /* background-color: #0a0a0a; */
+
+        .page {
+            width: 1500px;
+            text-align: center;
+            margin: auto;
         }
-        .pd_lst{
+
+        .pd_lst {
             display: flex;
             justify-content: space-around;
-            
             flex-wrap: wrap;
 
         }
-        .page .pd_img{
-            width: 200px;
-            height: 200px;;
+
+        .pd_lst .pd_img {
+            width: 600px;
+            height: 600px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transition: all 2s linear;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .pd_li:hover .pd_img {
+            display: block;
+            width: 1200px;
+            height: 1200px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            transition-timing-function: ease;
         }
     </style>
 
@@ -175,12 +194,6 @@
 <body>
     <header id="header">
         <!-- 헤더 부분 인클루드 -->
-
-
-
-
-
-
 
         <!-- 헤더 내용 기술 -->
         <nav class="top-bar">
@@ -237,73 +250,73 @@
         </div>
     </header>
 
-<section class="page">
-    <div class="page_wrap">
-        <h2 class="page_title"></h2>
-        <ul class="pd_lst">
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/animal/lion-1.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/animal/lion-2.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/Nature/nature-1.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/Nature/nature-2.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/Nature/nature-3.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/Nature/nature-4.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/Nature/nature-5.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/people/people1.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/people/people2.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/people/people3.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/people/people4.jpg" alt="">
-                </a>
-            </li>
-            <li>
-                <a href="" class="pd_link">
-                    <img class="pd_img" src="./image/people/people5.jpg" alt="">
-                </a>
-            </li>
-        </ul>
-    </div>
-</section>
+    <section class="page">
+        <div class="page_wrap">
+            <h2 class="page_title"></h2>
+            <ul class="pd_lst">
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/animal/lion-1.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/animal/lion-2.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/Nature/nature-1.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/Nature/nature-2.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/Nature/nature-3.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/Nature/nature-4.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/Nature/nature-5.jpg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/people/people1.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/people/people2.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/people/people3.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/people/people4.jpg" alt="">
+                    </a>
+                </li>
+                <li class="pd_li">
+                    <a href="" class="pd_link">
+                        <img class="pd_img" src="./image/people/people5.jpg" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
 
 
     <footer id="footer" class="footer-nav row expanded collapse">
