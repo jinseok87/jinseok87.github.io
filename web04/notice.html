@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo zone</title>
+    <title>공지사항</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
@@ -21,52 +21,31 @@
         });
     </script>
     <style>
-  
-        .page {
-            width: 1500px;
+        .title {
             text-align: center;
-            margin: auto;
+            margin-top: 40px;
         }
 
-        .pd_lst {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-
+        #footer {
+            margin-top: 200px;
         }
 
-        .pd_lst .pd_img {
-            width: 600px;
-            height: 600px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            transition: all 2s linear;
-            display: flex;
-            flex-wrap: wrap;
-            text-align: center;
-        }
-
-        .button-img-size {
-            width: 100%;
-            height: auto;
-            text-align: center;
-            margin: auto;
-        }
-
-        .button-600, .button-1200 {
+        .table th {
             background-color: #dc000c;
-            height: 60px;
-            padding: 10px;
-            text-align: center;
-            margin-left: 200px;
-            margin-right:200px;
-            margin-top: 15px;
             color: #fff;
-            font-size: 25px;
+            text-align: center;
         }
 
-        body{
-            background-color:#0a0a0a;
+        .table td {
+            background-color: #fff;
+            text-align: center;
+            color: #0a0a0a;
+        }
+
+        .notice-title {
+            color: #0a0a0a;
+            font-size: 22px;
+            font-weight: bold;
         }
     </style>
     <!-- Hotjar Tracking Code for my site -->
@@ -80,30 +59,22 @@
             a.appendChild(r);
         })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
-    <script>
-        $(function () {
-            $('.button-600').click(function () {
-                $('.pd_img').css({ "width": "600", "height": "600" });
-            });
-            $('.button-1200').click(function () {
-                $('.pd_img').css({ "width": "1200", "height": "1200" });
-            });
-        });
-    </script>
+
 </head>
+
 <body>
     <header id="header">
         <nav class="top-bar">
-    <div class="top-bar-left" id="gnb">
-        <ul class="dropdown menu" data-dropdown-menu>
-            <li class="menu-text"><a href="index.html" class="logo"><img src="./image/company/company-logo.svg" alt="company-logo"></a></li>
-            <li><a href="company.html">Company</a></li>
-            <li><a href="product.html">Product</a></li>
-            <li><a href="service.html">Service</a></li>
-            <li><a href="free.html">Photo</a></li>
-            <li><a href="notice.html">Notice</a></li>
-        </ul>
-    </div>
+            <div class="top-bar-left" id="gnb">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text"><a href="index.html" class="logo"><img src="./image/company/company-logo.svg" alt="company-logo"></a></li>
+                    <li><a href="company.html">Company</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="free.html">Photo</a></li>
+                    <li><a href="notice.html">Notice</a></li>
+                </ul>
+            </div>
             <div class="top-bar-right">
                 <ul class="menu">
                     <li><a href="loginForm.html">로그인</a></li>
@@ -134,51 +105,36 @@
             </ul>
         </div>
     </header>
-    <div class="button-img-size">
-        <a type="button" class="button-600">size-600</a>
-        <a type="button" class="button-1200">size-1200</a>
-    </div>
-    <section class="page">
-        <div class="page_wrap">
-            <h2 class="page_title"></h2>
-            <ul class="pd_lst">
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/animal/lion-1.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/animal/lion-2.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/Nature/nature-1.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/Nature/nature-2.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/Nature/nature-3.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/Nature/nature-4.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/Nature/nature-5.jpg" alt="">
-                </li>
-                <li>
-                    <img class="pd_img" src="./image/people/people1.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/people/people2.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/people/people3.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/people/people4.jpg" alt="">
-                </li>
-                <li class="pd_li">
-                    <img class="pd_img" src="./image/people/people5.jpg" alt="">
-                </li>
-            </ul>
+
+    <section class="section">
+        <div class="container">
+            <h1 class="title">공지사항 목록</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Title</th>
+                        <th>RegDate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><a class="notice-title" href="">테스트글 2</a></td>
+                        <td>
+                            2022-12-20
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a class="notice-title" href="">테스트입니다~</a></td>
+                        <td>
+                            2022-12-15
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="" class="button is-light">글쓰기</a>
         </div>
     </section>
     <footer id="footer" class="footer-nav row expanded collapse">
