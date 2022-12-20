@@ -1,3 +1,15 @@
+
+.top-bar-left{
+    float:left;
+    overflow: hidden;
+    font-size: 14px;
+}
+
+.top-bar-right{
+    float: right;
+    margin-top: 40px;
+}
+
 .orbit-container {
     text-align: center;
 }
