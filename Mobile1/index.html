@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>jQuery 모바일 앱</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- <link rel="manifest" href="manifest.json" /> -->
+
+    <!-- <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="./images/icons/icon-152x152.png" />
+    <link rel="apple-touch-icon-precomposed" href="favicon-152.png">
+    <link rel="apple-touch-icon" href="favicon-57.png" sizes="57x57">
+    <link rel="apple-touch-icon" href="favicon-76.png" sizes="76x76">
+    <link rel="apple-touch-icon" href="favicon-120.png" sizes="120x120">
+    <link rel="apple-touch-icon" href="favicon-152.png" sizes="152x152">
+    <link rel="apple-touch-icon" href="favicon-180.png" sizes="180x180">
+    <link rel="apple-touch-startup-image" href="startup.png"> -->
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="yeogijeogi" />
+
+    <meta name="application-name" content="yeogijeogi">
+    <meta name="subject" content="yeogijeogi">
+    <meta name="keywords" content="데이트, 가볼만한 곳, 명소, 데이트 추천, 데이트 코스">
+    <meta name="description" content="yeogijeogi는 매일 매일 똑같은 데이트 코스에 따분함 지루함을 느끼는 커플, 데이트 코스를 선택하는데 어려운 커플들을 위한 데이트코스 추천 웹 애플리케이션입니다. ">
+    <meta name="url" content="https://jinseok87.github.io/mobile01">
+    <meta name="author" content="jeong jin seok">
+    <meta name="email" content="a871120@naver.com">
+    <meta name="theme-color" content="#f1718c" />
+    <meta name="robots" content="index, flow">
+
+    <!-- 앱 미리보기 정보 -->
+    <!--iOS-->
+    <meta property="al:ios:url" content=" ios 앱 URL" />
+    <meta property="al:ios:app_store_id" content="ios 앱스토어 ID" />
+    <meta property="al:ios:app_name" content="ios 앱 이름" />
+
+    <!--Android-->
+    <meta property="al:android:url" content="안드로이드 앱 URL" />
+    <meta property="al:android:app_name" content="안드로이드 앱 이름" />
+    <meta property="al:android:package" content="안드로이드 패키지 이름" />
+    <meta property="al:web:url" content="안드로이드 앱 URL" />
+
+    <!-- 그래픽 특성별 연동 설정 코드 -->
+    <!-- 오픈 그래프 -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jinseok87.github.io/mobile01">
+    <meta property="og:title" content="yeogijeogi">
+    <meta property="og:site_name" content="yeogijeogi">
+    <meta property="og:image" content="siteimage.jpg">
+    <meta property="og:image:width" content="1000">
+    <meta property="og:image:height" content="400">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="video">
+    <meta name="twitter:title" content="yeogijeogi">
+    <meta name="twitter:description" content="yeogijeogi는 매일 매일 똑같은 데이트 코스에 따분함 지루함을 느끼는 커플, 데이트 코스를 선택하는데 어려운 커플들을 위한 데이트코스 추천 웹 애플리케이션입니다. ">
+    <meta name="twitter:image" content="siteimage.jpg">
+
+    <style>
+        .page_tit {
+            font-size: 5vw;
+            clear: both;
+            padding-bottom: 2rem;
+        }
+
+        .ui-header .ui-title {
+            text-align: center;
+        }
+
+        .ui-icon-custom1:after {
+            background-image: url("../car2.png");
+            background-position: center center;
+            background-size: 95%;
+        }
+
+        .ui-field-contain:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        body {
+            background-color: #333;
+        }
+
+        img {
+            border: 0;
+        }
+
+        .ui-content .ui-container {
+            width: 100%;
+        }
+
+        .new-select img {
+            width: 35vw;
+
+        }
+
+
+        #wrap {
+            margin: 10px auto;
+            width: 640px;
+        }
+
+        #nav li {
+            float: left;
+        }
+
+        #nav img {
+            width: 70px;
+        }
+
+        #nav a {
+            display: block;
+            border: 2px solid #bbb;
+            margin: 0 6px 10px 0;
+            -webkit-border-radius: 5px;
+        }
+
+        #nav a.active {
+            border: 2px solid #fff;
+        }
+
+        #window {
+            clear: both;
+        }
+
+        .new-select {
+            margin-top: 3vw;
+            ;
+            margin-bottom: 3vw;
+            width: 50%;
+
+        }
+
+        .company-btn {
+            text-align: center;
+        }
+
+        .company-id {
+            font-size: 1vw;
+            color: rgb(97, 93, 93);
+        }
+
+        .addr {
+            font-size: 2vh;
+            margin-top: 1vh;
+            margin-bottom: 1vh;
+        }
+
+        .place-tit {
+            margin-bottom: 1vh;
+        }
+
+        .detail-content {
+            width: 50vw;
+            margin: auto;
+
+        }
+
+        .detail-main-img {
+            width: 100%
+        }
+    </style>
+
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-b">
+    <div id="page0" data-role="page" class="ui-page ui-page-theme-a ui-page-active">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="ui-content" data-role="content">
+            <div class="ui-container">
+                <h3 class="ui-title">최신 제휴처</h3>
+                <ul class="ui-grid-a">
+                    <li class="ui-block-a new-select">
+                        <a href="#page6" data-transition="fade">
+                            <img src="./0002.jpg" alt="봉이네">
+                            <h4>봉이네</h4>
+                            <p>마곡나루역</p>
+                        </a>
+                    </li>
+                    <li class="ui-block-b new-select">
+                        <a href="#page7" data-transition="fade">
+                            <img src="./0006.jpg" alt="고양이자리표">
+                            <h4>고양이자리표</h4>
+                            <p>영통역</p>
+                        </a>
+                    </li>
+                    <li class="ui-block-a new-select">
+                        <a href="#page8" data-transition="fade">
+                            <img src="./0008.jpg" alt="드로잉카페">
+                            <h4>드로잉카페</h4>
+                            <p>평내호평역</p>
+                        </a>
+                    </li>
+                    <li class="ui-block-b new-select">
+                        <a href="#page9" data-transition="fade">
+                            <img src="./0010.jpg" alt="봉이네">
+                            <h4>꽌코이</h4>
+                            <p>성수동</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+    <div id="page1" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-container">
+            <div class="ui-content" data-role="content">
+                <h3 class="ui-title">데이트명소</h3>
+                <ul class="ui-listview ui-listview-inset ui-corner-all ui-shadow" data-inset="true" data-role="listview ,ui-grid-a" data-filter="true"
+                    data-filter-placeholder="Search Station...">
+                    <!-- <ul data-role=" ui-grid-a"> -->
+                    <li class="ui-block-a new-select">
+                        <a href="#page8">
+                            <img src="./0008.jpg" />
+                            <h3>드로잉카페</h3>
+                            <p>평내호평역</p>
+                        </a>
+                    </li>
+                    <li class="ui-block-b new-select">
+                        <a href="#page6">
+                            <img src="./0002.jpg" />
+                            <h3>봉이네</h3>
+                            <p>마곡나루역</p>
+                        </a>
+                    </li>
+                    <li class="ui-block-a new-select">
+                        <a href="#page10">
+                            <img src="./11.jpg" />
+                            <h3>아트블라썸</h3>
+                            <p>범어역</p>
+                        </a>
+                    </li>
+                    <li class="ui-block-b new-select">
+                        <a href="#page11">
+                            <img src="./12.jpg" />
+                            <h3>소마드로잉카페</h3>
+                            <p>장항동</p>
+                        </a>
+                    </li>
+                    <li class="ui-block-a new-select">
+                        <a href="#page7">
+                            <img src="./0006.jpg" />
+                            <h3>고양이자리표</h3>
+                            <p>영통역</p>
+                        </a>
+                    </li>
+                    <li class="ui-block-b new-select">
+                        <a href="#page12">
+                            <img src="./13.jpg" />
+                            <h3>그림앤나</h3>
+                            <p>인천 부평구</p>
+                        </a>
+                    </li>
+                    </ui>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+    <div id="page2" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div role="page" class="ui-content" data-role="content">
+            <div class="ui-container">
+                <div id="table-column-toggle-popup-placeholder" class="ui-screen-hidden"></div><a href="#table-column-toggle-popup"
+                    id="table-column-toggle-button" data-rel="popup" data-theme="inherit"
+                    class="ui-button ui-shadow ui-corner-all ui-widget ui-button-inherit ui-table-columntoggle-btn ui-mini" role="button"
+                    style="display:none">Columns...</a>
+                <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke ui-table ui-table-columntoggle">
+                    <thead>
+                        <tr>
+                            <th data-priority="2" data-colstart="1" class="ui-table-priority-2 ui-table-cell-visible">no</th>
+                            <th data-colstart="2">Title</th>
+                            <th data-priority="1" data-colstart="4" class="ui-table-priority-1">작성자</th>
+                            <th data-priority="3" data-colstart="3" class="ui-table-priority-3 ui-table-cell-visible">등록일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="ui-table-priority-2 ui-table-cell-visible">1</th>
+                            <td><a href="" data-rel="external">제휴문의</a></td>
+                            <td class="ui-table-priority-1">yeogijeong</td>
+                            <td class="ui-table-priority-3 ui-table-cell-visible">22-11-30</td>
+                        </tr>
+                        <tr>
+                            <th class="ui-table-priority-2 ui-table-cell-visible">2</th>
+                            <td><a href="" data-rel="external">제휴안내</a></td>
+                            <td class="ui-table-priority-1">yeogijeong</td>
+                            <td class="ui-table-priority-3 ui-table-cell-visible">22-11-30</td>
+                        </tr>
+                        <tr>
+                            <th class="ui-table-priority-2 ui-table-cell-visible">3</th>
+                            <td><a href="" data-rel="external">yeogijeogi소개</a></td>
+                            <td class="ui-table-priority-1">yeogijeong</td>
+                            <td class="ui-table-priority-3 ui-table-cell-visible">22-11-30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page3" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div data-role="content" role="sub" class="ui-content">
+            <div id="wrap">
+                <ul id="nav">
+                    <li><a href="#page6" class="active"><img src="./0003.jpg" alt="봉이네" /></a> </li>
+                    <li><a href="#page12" class="active"><img src="./13.jpg" alt="그림앤나" /></a></li>
+                    <li><a href="#page10" class="active"><img src="./11.jpg" alt="아트블라썸" /></a></li>
+                    <li><a href="#page9" class="active"><img src="./0010.jpg" alt="꽌코이" /></a></li>
+                </ul>
+                <div id="window"><img src="./0003.jpg" alt="" /></div>
+            </div>
+            <!-- <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#nav a').mouseover(function (e) {
+                        e.preventDefault();
+                        $('#nav a').removeClass('active');
+                        $(this).addClass('active');
+                        img_url = $(this).attr('href');
+                        $('#window img').attr('src', img_url);
+                    });
+                }) -->
+            </script>
+            <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+                <ul class="ui-grid-b company-btn">
+                    <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                    <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                    <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+                </ul>
+                <ul class="company-id">
+                    <li>주식회사 yeogijeogi (대표 정진석)</li>
+                    <li>경기도 김포시 운양동 326-9</li>
+                    <li>사업자등록번호 : 119-12-119112</li>
+                    <li>고객센터 : 114 / superpower@naver.com</li>
+                </ul>
+            </footer>
+        </div>
+    </div>
+    <div id="page4" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="ui-content" data-role="content">
+            <h2 class="ui-title">로그인</h2>
+            <div data-role="container">
+                <form>
+                    <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                        <li class="ui-field-contain ui-li-static ui-body-inherit ui-first-child">
+                            <input type="text" name="id" id="id" value="" data-clear-btn="true" placeholder="ID 입력">
+                        </li>
+                        <li class="ui-field-contain ui-li-static ui-body-inherit">
+                            <input type="password" name="pw" id="pw" value="" data-clear-btn="true" placeholder="PW 입력">
+                        </li>
+                    </ul>
+                    <div class="ui-btn-group">
+                        <button type="submit" class="ui-btn ui-btn-inline">로그인</button>
+                        <a href="#page5" class="ui-btn ui-btn-inline"> 회원가입</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page5" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-content">
+            <h2 class="ui-title">회원가입 폼</h2>
+            <div data-role="container">
+                <form>
+                    <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                        <li class="ui-field-contain ui-li-static ui-body-inherit ui-first-child">
+                            <input type="text" name="id" id="id" placeholder="ID 입력">
+                            <button type="button" class="ui-btn ui-btn-inline">ID 체크</button>
+                        </li>
+                        <li class="ui-field-contain ui-li-static ui-body-inherit">
+                            <input type="password" name="pw" id="pw" placeholder="비밀번호 입력">
+                        </li>
+                        <li class="ui-field-contain ui-li-static ui-body-inherit">
+                            <input type="password" name="pw2" id="pw2" placeholder="PW2 비밀번호 확인 입력">
+                        </li>
+                        <li class="ui-field-contain ui-li-static ui-body-inherit">
+                            <input type="tel" name="tel" id="tel" placeholder="전화번호 입력">
+                        </li>
+                        <li class="ui-field-contain ui-li-static ui-body-inherit">
+                            <input type="email" name="email" id="email" placeholder="이메일 입력">
+                        </li>
+                        <li class="ui-field-contain ui-li-static ui-body-inherit">
+                            <label for="birth">생년월일</label>
+                            <input type="date" name="birth" id="birth" placeholder="생일 입력">
+                        </li>
+                        <li class="ui-field-contain ui-li-static ui-body-inherit">
+                            <input type="file" name="filename" accept="image/gif, image/jpeg, image/png" placeholder="사진" />
+                        </li>
+                    </ul>
+                    <div class="ui-btn-group">
+                        <a href="#page0" class="ui-btn ui-btn-inline">회원가입</a>
+                        <button type="reset" class="ui-btn ui-btn-inline">취소</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page6" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-content">
+            <div class="content detail-content" data-role="content">
+                <img class="detail-main-img" src="./0002.jpg" />
+                <div class="addr">마곡나루역</div>
+                <h2 class="place-tit">봉이네</h2>
+                <div class="ui-container">
+                    <h3 class="ui-title">주요메뉴</h3>
+                    <div class="ui-grid-a">
+                        <ul>
+                            <li>시래기털래기(2인) - 14,000원</li>
+                            <li>쭈꾸미정식(2인) - 17,000원</li>
+                            <li>제육정식(2인) - 17,000원</li>
+                            <li>코다리정식(2인) - 17,000원</li>
+                        </ul>
+                        <br>
+                        <h3>영업정보</h3>
+                        <ul>
+                            <li>시간 : 11:00~ 21:00</li>
+                            <li>휴무 : 없음</li>
+                            <li>주가 가능</li>
+                        </ul>
+                        <p>서울특별시 강서구 마곡동 757-2</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page7" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-content">
+            <div class="content detail-content" data-role="content">
+                <img class="detail-main-img" src="./0006.jpg" />
+                <div class="addr">영통역</div>
+                <h2 class="place-tit">고양이자리표</h2>
+                <div class="ui-container">
+                    <h3 class="ui-title">주요메뉴</h3>
+                    <div class="ui-grid-a">
+                        <ul>
+                            <li>2인 무제한 평일 이용권 - 음료 2잔(45%할인) - 9,000원</li>
+                            <li>2인 무제한 이용권(2인) - 18,000원</li>
+                            <li>고양이간식 - 3,000원</li>
+                        </ul>
+                        <br>
+                        <h3>영업정보</h3>
+                        <ul>
+                            <li>시간 : 12:00~ 22:00</li>
+                            <li>휴무 : 월요일</li>
+                            <li>주가 가능</li>
+                        </ul>
+                        <p>경기 수원시 영통구 영통동 998-6 아셈프라자 3층 308호</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page8" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-content">
+            <div class="content detail-content" data-role="content">
+                <img class="detail-main-img" src="./0008.jpg" />
+                <div class="addr">평내호평역</div>
+                <h2 class="place-tit">드로잉카페</h2>
+                <div class="ui-container">
+                    <h3 class="ui-title">주요메뉴</h3>
+                    <div class="ui-grid-a">
+                        <ul>
+                            <li>2인 2시간 평일 이용권 (20%할인) - 32,000원</li>
+                            <li>2인 2시간 평일 이용권 - 40,000원</li>
+                            <li>2인 2시간 주말/공휴일 이용권 - 44,000원</li>
+                        </ul>
+                        <br>
+                        <h3>영업정보</h3>
+                        <ul>
+                            <li>시간 : 평일, 토요일 10:00~ 22:00 </li>
+                            <li>휴무 : 일요일</li>
+                            <li>주가 가능</li>
+                        </ul>
+                        <p>경기도 남양주시 호평동 642-1-4층 401호</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page9" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-content">
+            <div class="content detail-content" data-role="content">
+                <img class="detail-main-img" src="./0010.jpg" />
+                <div class="addr">성수동</div>
+                <h2 class="place-tit">꽌코이</h2>
+                <div class="ui-container">
+                    <h3 class="ui-title">주요메뉴</h3>
+                    <div class="ui-grid-a">
+                        <ul>
+                            <li>주류 및 음료 - 30,000</li>
+                            <li>반쎄오 - 18,000</li>
+                            <li>분짜 - 16,000</li>
+                        </ul>
+                        <br>
+                        <h3>영업정보</h3>
+                        <ul>
+                            <li>시간 : 11:30~ 21:00 (break time 15:00~17:00)</li>
+                            <li>휴무 : 없음</li>
+                            <li>주가 불가능</li>
+                        </ul>
+                        <p>서울특별시 성동구 성수동2가 315-48 1층</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page10" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-content">
+            <div class="content detail-content" data-role="content">
+                <img class="detail-main-img" src="./11.jpg" />
+                <div class="addr">범어역</div>
+                <h2 class="place-tit">아트블라썸</h2>
+                <div class="ui-container">
+                    <h3 class="ui-title">주요메뉴</h3>
+                    <div class="ui-grid-a">
+                        <ul>
+                            <li>주류 및 음료 - 30,000</li>
+                        </ul>
+                        <br>
+                        <h3>영업정보</h3>
+                        <ul>
+                            <li>시간 : 11:30~ 21:00 (break time 15:00~17:00)</li>
+                            <li>휴무 : 없음</li>
+                            <li>주가 불가능</li>
+                        </ul>
+                        <p>서울특별시 성동구 성수동</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page11" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-content">
+            <div class="content detail-content" data-role="content">
+                <img class="detail-main-img" src="./12.jpg" />
+                <div class="addr">장항동</div>
+                <h2 class="place-tit">소마드로잉</h2>
+                <div class="ui-container">
+                    <h3 class="ui-title">주요메뉴</h3>
+                    <div class="ui-grid-a">
+                        <ul>
+                            <li>주류 및 음료 - 10,000</li>
+                            <li>식사류 - 10,000</li>
+                        </ul>
+                        <br>
+                        <h3>영업정보</h3>
+                        <ul>
+                            <li>시간 : 10:00~22:00 </li>
+                            <li>휴무 : 없음</li>
+                            <li>주가 불가능</li>
+                        </ul>
+                        <p>겨기도 고양시 일산동구 장항2동 정발산로 31-17</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page12" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div data-role="content" role="sub" class="ui-content">
+            <div class="content detail-content" data-role="content">
+                <img class="detail-main-img" src="./13.jpg" />
+                <div class="addr">인천 부평구</div>
+                <h2 class="place-tit">그림앤나</h2>
+                <div class="ui-container">
+                    <h3 class="ui-title">주요메뉴</h3>
+                    <div class="ui-grid-a">
+                        <ul>
+                            <li>그림 - 15,000</li>
+                            <li>주류 및 음료 - 10,000</li>
+                            <li>식사류 - 10,000</li>
+                        </ul>
+                        <br>
+                        <h3>영업정보</h3>
+                        <ul>
+                            <li>시간 : 11:30~ 21:00</li>
+                            <li>휴무 : 없음</li>
+                            <li>주가 불가능</li>
+                        </ul>
+                        <p>인천 부평구 동수로 163</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+</body>
+
+</html>
