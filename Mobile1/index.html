@@ -21,8 +21,8 @@
     <link rel="apple-touch-icon" href="./icon/apple-icon-152x152.png" sizes="152x152">
     <link rel="apple-touch-icon" href="./icon/apple-icon-180x180.png" sizes="180x180">
     <link rel="apple-touch-startup-image" href="./icon/yeogijeogi.png">
-<!-- video -->
-<link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <!-- video -->
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
@@ -120,7 +120,9 @@
 
         }
 
-
+        .btn-wrap .btn-write{
+            margin: 20px 5vw;
+        }
         #wrap {
             margin: 10px auto;
             width: 640px;
@@ -177,7 +179,7 @@
         }
 
         .detail-content {
-            width: 50vw;
+            width: 80vw;
             margin: auto;
 
         }
@@ -185,17 +187,46 @@
         .detail-main-img {
             width: 100%
         }
-.video-player { clear:both; }
-    .video-player::after { content:""; display:block; clear:both; }
-    .vdo1-dimensions { width: 60vw; height: auto; margin: auto; padding: 0; min-width: 360px;  min-height: 202px; }
-    .vdo1-dimensions::after { content: ""; clear: both; display: block; }
-    .video-js .vjs-tech { display: block; width: 60vw; height: auto; min-width: 360px; min-height: 202px; }
-    .play-list{
-        margin-top: 10vh;
-        width: 100%;
-        text-align: center;
-        margin: auto;
-    }
+
+        .video-player {
+            clear: both;
+        }
+
+        .video-player::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .vdo1-dimensions {
+            width: 60vw;
+            height: auto;
+            margin: auto;
+            padding: 0;
+            min-width: 360px;
+            min-height: 202px;
+        }
+
+        .vdo1-dimensions::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .video-js .vjs-tech {
+            display: block;
+            width: 60vw;
+            height: auto;
+            min-width: 360px;
+            min-height: 202px;
+        }
+
+        .play-list {
+            margin-top: 10vh;
+            width: 100%;
+            text-align: center;
+            margin: auto;
+        }
     </style>
 
 </head>
@@ -203,7 +234,7 @@
 <body class="ui-mobile-viewport ui-overlay-b">
     <div id="page0" data-role="page" class="ui-page ui-page-theme-a ui-page-active">
         <header class="ui-header" data-role="header" data-theme="b">
-            <h2 class="ui-title">yeogijeogi</h2>
+            <h2 class="ui-title font-title">yeogijeogi</h2>
             <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
                 <ul class="ui-grid-d">
                     <li class="ui-block-a">
@@ -449,22 +480,25 @@
                             <th class="ui-table-priority-2 ui-table-cell-visible">1</th>
                             <td><a href="#page13" data-rel="external">제휴문의</a></td>
                             <td class="ui-table-priority-1">yeogijeong</td>
-                            <td class="ui-table-priority-3 ui-table-cell-visible">22/11/30</td>
+                            <td class="ui-table-priority-3 ui-table-cell-visible">22-11-30</td>
                         </tr>
                         <tr>
                             <th class="ui-table-priority-2 ui-table-cell-visible">2</th>
                             <td><a href="" data-rel="external">제휴안내</a></td>
                             <td class="ui-table-priority-1">yeogijeong</td>
-                            <td class="ui-table-priority-3 ui-table-cell-visible">22/11/30</td>
+                            <td class="ui-table-priority-3 ui-table-cell-visible">22-11-30</td>
                         </tr>
                         <tr>
                             <th class="ui-table-priority-2 ui-table-cell-visible">3</th>
                             <td><a href="" data-rel="external">yeogijeogi소개</a></td>
                             <td class="ui-table-priority-1">yeogijeong</td>
-                            <td class="ui-table-priority-3 ui-table-cell-visible">22/11/30</td>
+                            <td class="ui-table-priority-3 ui-table-cell-visible">22-11-30</td>
                         </tr>
                     </tbody>
                 </table>
+                <div class="btn-wrap">
+                    <a href="#page14" class="ui-btn ui-btn-inline btn-write">글등록</a> </li>
+                </div>
             </div>
         </div>
         <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
@@ -520,46 +554,46 @@
                 </ul>
             </nav>
         </header>
-<div data-role="content" role="sub" class="ui-content">
-    <div class="player">
-        <div class="video-player">
-            <video id="vdo1" class="video-js" controls preload="auto" data-setup="{}">
-                <source src="./video/best3.mp4" type="video/mp4" />
-            </video>
+        <div data-role="content" role="sub" class="ui-content">
+            <div class="player">
+                <div class="video-player">
+                    <video id="vdo1" class="video-js" controls preload="auto" data-setup="{}">
+                        <source src="./video/best3.mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="btn_lst" id="btn_lst">
+                    <br>
+                    <ul class="play-list">
+                        <li><span data-val="./video/best3.mp4">서울 강남 데이트 bast 3</span></li><br>
+                        <li><span data-val="./video/date1.mp4">안산에서 스트레스 삭제시키고 왔습니다.</span></li><br>
+                    </ul>
+                </div>
+            </div>
+            <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $("#btn_lst li span").click(function () {
+                        $("#vdo1_html5_api").attr("src", $(this).attr("data-val"));
+                    });
+                });  
+            </script>
         </div>
-        <div class="btn_lst" id="btn_lst">
-            <br>
-            <ul class="play-list">
-                <li><span data-val="./video/best3.mp4">서울 강남 데이트 bast 3</span></li><br>
-                <li><span data-val="./video/date1.mp4">안산에서 스트레스 삭제시키고 왔습니다.</span></li><br>
+
+
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
             </ul>
-        </div>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
     </div>
-    <script src="https://vjs.zencdn.net/7.20.3/video.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#btn_lst li span").click(function () {
-                $("#vdo1_html5_api").attr("src", $(this).attr("data-val"));
-            });
-        });  
-    </script>
-</div>
-
-
-            <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
-                <ul class="ui-grid-b company-btn">
-                    <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
-                    <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
-                    <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
-                </ul>
-                <ul class="company-id">
-                    <li>주식회사 yeogijeogi (대표 정진석)</li>
-                    <li>경기도 김포시 운양동 326-9</li>
-                    <li>사업자등록번호 : 119-12-119112</li>
-                    <li>고객센터 : 114 / superpower@naver.com</li>
-                </ul>
-            </footer>
-        </div>
     </div>
     <div id="page4" data-role="page" class="ui-page ui-page-theme-a">
         <header class="ui-header" data-role="header" data-theme="b">
@@ -1314,23 +1348,95 @@
             <div class="content detail-content" data-role="content">
                 <img class="detail-main-img" src="./c1.jpg" />
                 <div class="ui-container">
-                    <h3 class="ui-title">대한민국 커플들, 제휴점 사장님과 함께 <br/> 매일매일 성장하고 있습니다.</h3>
+                    <h3 class="ui-title">대한민국 커플들, 제휴점 사장님과 함께 <br /> 매일매일 성장하고 있습니다.</h3>
                     <div class="ui-grid-a">
                         <br>
                         <form action="">
-                        <ul>
-                            <li>제휴문의</li>
+                            <ul>
+                                <li>제휴문의</li>
+                                <br>
+                                <li><span for="tel">전화번호</span><input id="tel" type="text" placeholder="전화번호를 남겨주세요"></li>
+                            </ul>
                             <br>
-                            <li><span for="tel">전화번호</span><input id="tel" type="text" placeholder="전화번호를 남겨주세요"></li>
-                        </ul>
-                        <br>
-                        <input type="submit" value="문의하기">
+                            <input type="submit" value="문의하기">
                         </form>
-    
+
                     </div>
                 </div>
             </div>
         </div>
+        <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
+            <ul class="ui-grid-b company-btn">
+                <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
+                <li class="ui-block-b"> <a href="#page0" class="ui-btn">이용약관</a> </li>
+                <li class="ui-block-c"> <a href="#page0" class="ui-btn">제휴문의</a> </li>
+            </ul>
+            <ul class="company-id">
+                <li>주식회사 yeogijeogi (대표 정진석)</li>
+                <li>경기도 김포시 운양동 326-9</li>
+                <li>사업자등록번호 : 119-12-119112</li>
+                <li>고객센터 : 114 / superpower@naver.com</li>
+            </ul>
+        </footer>
+    </div>
+
+    <div id="page14" data-role="page" class="ui-page ui-page-theme-a">
+        <header class="ui-header" data-role="header" data-theme="b">
+            <h2 class="ui-title">yeogijeogi</h2>
+            <nav data-role="navbar" data-grid="d" role="navigation" class="nav-glyphish-example ui-navbar">
+                <ul class="ui-grid-d">
+                    <li class="ui-block-a">
+                        <a href="#page0" data-icon="home" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">home</span>
+                            <span class="ui-icon ui-icon-home ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-b">
+                        <a href="#page1" data-icon="tag" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">place</span>
+                            <span class="ui-icon ui-icon-tag ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-c">
+                        <a href="#page2" data-icon="alert" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">notice</span>
+                            <span class="ui-icon ui-icon-alert ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-d">
+                        <a href="#page3" data-icon="camera" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">review</span>
+                            <span class="ui-icon ui-icon-camera ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                    <li class="ui-block-e">
+                        <a href="#page4" data-icon="power" data-theme="a" class="ui-btn ui-btn-icon-top ui-btn-up-a">
+                            <span class="ui-btn-text">login</span>
+                            <span class="ui-icon ui-icon-power ui-icon-shadow"></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    <div class="ui-content" data-role="content">
+        <h2 class="ui-title">글쓰기</h2>
+        <div data-role="container">
+            <form>
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                    <li class="ui-field-contain ui-li-static ui-body-inherit ui-first-child">
+                        <input type="text" name="title" id="title" value="" data-clear-btn="true" placeholder="글제목">
+                    </li>
+                    <li class="ui-field-contain ui-li-static ui-body-inherit">
+                        <textarea name="text" id="text" cols="60" rows="70" placeholder="글내용"></textarea>
+                    </li>
+                </ul>
+                <div class="ui-btn-group">
+                    <a href="#page2"><input type="submit"  value="등록" class="ui-btn ui-btn-inline"/></a>
+                    <input type="reset"  value="취소"href="#page5" class="ui-btn ui-btn-inline">
+                </div>
+            </form>
+        </div>
+    </div>
         <footer data-role="footer" class="ui-footer" data-theme="b" data-position="fixed">
             <ul class="ui-grid-b company-btn">
                 <li class="ui-block-a"> <a href="#page0" class="ui-btn">회사소개</a> </li>
